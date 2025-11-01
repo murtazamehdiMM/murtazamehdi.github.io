@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Basics: Key Protocols</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Font and Global Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Stormy Heavy Grey background */
+        }
+        /* Electric Blue accent color */
+        .electric-blue {
+            color: #22d3ee; /* Tailwind text-cyan-400 */
+        }
+        .header-bg {
+            background-color: #1e293b; /* Slightly lighter slate for contrast */
+        }
+        .section-header {
+            border-bottom: 2px solid #22d3ee;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .card {
+            background-color: #1e293b;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid #334155;
+            transition: border-color 0.3s;
+        }
+        .card:hover {
+            border-color: #22d3ee;
+        }
+        .concept-title {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        /* Custom style for code blocks */
+        .code-block {
+            background-color: #0c121e; /* Even darker than the background for contrast */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: monospace;
+            color: #f8fafc; /* light text */
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-8">
+
+    <!-- Back to Home Link -->
+    <a href="index.html" class="inline-flex items-center text-slate-400 hover:electric-blue transition duration-200 mb-8">
+        <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i>
+        Back to Knight's Den Home
+    </a>
+
+    <main class="w-full max-w-7xl mx-auto bg-slate-800 rounded-xl shadow-2xl overflow-hidden p-8 sm:p-12 text-slate-300">
+        
+        <!-- Header -->
+        <header class="mb-10">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white section-header">
+                🌐 Network Basics: Key Protocols
+            </h1>
+            <p class="mt-4 text-xl electric-blue">
+                Part 1: Clear explanations of the protocols that form the backbone of the internet.
+            </p>
+        </header>
+
+        <!-- Protocol Explanations Grid -->
+        <section class="grid md:grid-cols-2 gap-8">
+            
+            <!-- IP (Internet Protocol) -->
+            <div class="card">
+                <div class="flex items-center mb-4">
+                    <i data-lucide="globe" class="electric-blue w-6 h-6 mr-3"></i>
+                    <h2 class="text-2xl concept-title">IP (Internet Protocol)</h2>
+                </div>
+                <p>
+                    <strong>What it is:</strong> IP is the fundamental set of rules that governs the addressing and routing of data packets across networks. Think of it as the <strong>postal service</strong> of the internet: it makes sure a data package gets delivered from its source to the correct destination, regardless of how many different networks it has to cross.
+                </p>
+                <ul class="list-disc list-inside space-y-1 mt-3 ml-4 text-slate-400">
+                    <li><strong>Addressing:</strong> IP defines the structure of the addresses used to identify devices (IP addresses).</li>
+                    <li><strong>Routing:</strong> It specifies how routers should forward these packets to reach their final destination efficiently.</li>
+                    <li><strong>Connectionless:</strong> IP does not establish a connection before sending data. It just shoots the packets out, relying on higher-layer protocols (like TCP) to ensure reliable delivery.</li>
+                </ul>
+            </div>
+
+            <!-- IPv4 and IPv6 -->
+            <div class="card">
+                <div class="flex items-center mb-4">
+                    <i data-lucide="hash" class="electric-blue w-6 h-6 mr-3"></i>
+                    <h2 class="text-2xl concept-title">IPv4 vs. IPv6</h2>
+                </div>
+                <p>
+                    These are simply two different versions of the IP addressing scheme.
+                </p>
+                <ul class="list-disc list-inside space-y-2 mt-3 ml-4 text-slate-400">
+                    <li>
+                        <span class="electric-blue font-semibold">IPv4:</span> The original, most common format. Uses <strong>32-bit addresses</strong> (e.g., <code>192.168.1.1</code>). The problem is that it only allows for about 4.3 billion unique addresses, which we are running out of.
+                    </li>
+                    <li>
+                        <span class="electric-blue font-semibold">IPv6:</span> The modern solution. Uses <strong>128-bit addresses</strong> (e.g., <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code>). This provides a virtually limitless number of unique addresses, securing the internet's future growth.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- DHCP (Dynamic Host Configuration Protocol) -->
+            <div class="card">
+                <div class="flex items-center mb-4">
+                    <i data-lucide="zap" class="electric-blue w-6 h-6 mr-3"></i>
+                    <h2 class="text-2xl concept-title">DHCP (Dynamic Host Configuration Protocol)</h2>
+                </div>
+                <p>
+                    <strong>What it is:</strong> DHCP is the protocol that automatically assigns <strong>IP addresses</strong> and other necessary network configuration parameters (like the Subnet Mask and Default Gateway) to devices on a network.
+                </p>
+                <ul class="list-disc list-inside space-y-1 mt-3 ml-4 text-slate-400">
+                    <li><strong>Automation:</strong> Without DHCP, you would have to manually configure the IP address for every new phone, laptop, or server. DHCP makes this instant and error-free.</li>
+                    <li><strong>The DORA Process:</strong> The client and server communicate using a four-step sequence called DORA: <strong>Discover</strong>, <strong>Offer</strong>, <strong>Request</strong>, and <strong>Acknowledge</strong>.</li>
+                </ul>
+            </div>
+
+            <!-- DNS (Domain Name System) -->
+            <div class="card">
+                <div class="flex items-center mb-4">
+                    <i data-lucide="book-open-check" class="electric-blue w-6 h-6 mr-3"></i>
+                    <h2 class="text-2xl concept-title">DNS (Domain Name System)</h2>
+                </div>
+                <p>
+                    <strong>What it is:</strong> DNS acts as the <strong>phone book of the internet</strong>. Humans prefer to use memorable names (like <code>google.com</code>), but computers require numerical <strong>IP addresses</strong> (like <code>142.250.191.174</code>) to communicate.
+                </p>
+                <ul class="list-disc list-inside space-y-1 mt-3 ml-4 text-slate-400">
+                    <li><strong>Resolution:</strong> When you type a website name, DNS translates that name into its corresponding IP address so your browser knows where to send the request.</li>
+                    <li><strong>Core Function:</strong> It is essential for web browsing, email, and almost every other internet service.</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <!-- Placeholder for Part 2 -->
+        <section class="mt-16 pt-8 border-t border-slate-700">
+            <h2 class="text-3xl font-bold text-white section-header">
+                ⚙️ Part 2: Practical Application with Cisco Packet Tracer
+            </h2>
+            <p class="text-lg text-slate-400 mb-6">
+                This section will showcase hands-on scenarios to demonstrate these protocols in action.
+            </p>
+            <div class="bg-slate-700 p-6 rounded-lg text-center">
+                <p class="text-xl electric-blue">Content for Cisco Packet Tracer labs coming soon...</p>
+                <p class="mt-2 text-slate-400">We will detail the setup and configuration commands for DHCP and static IP scenarios here.</p>
+            </div>
+        </section>
+    
+    </main>
+
+    <!-- Script to initialize Lucide icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
