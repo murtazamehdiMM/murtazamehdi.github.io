@@ -10,17 +10,12 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
-        /* Custom Font and Global Styles */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a; /* Stormy Heavy Grey background */
+            background-color: #0f172a;
         }
-        /* Electric Blue accent color */
         .electric-blue {
-            color: #22d3ee; /* Tailwind text-cyan-400 */
-        }
-        .header-bg {
-            background-color: #1e293b; /* Slightly lighter slate for contrast */
+            color: #22d3ee;
         }
         .section-header {
             border-bottom: 2px solid #22d3ee;
@@ -32,24 +27,24 @@
             padding: 1.5rem;
             border-radius: 0.5rem;
             border: 1px solid #334155;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s, transform 0.3s;
         }
         .card:hover {
             border-color: #22d3ee;
+            transform: translateY(-4px);
         }
         .concept-title {
             color: #ffffff;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
-        /* Custom style for code blocks */
         .code-block {
-            background-color: #0c121e; /* Even darker than the background for contrast */
+            background-color: #0c121e;
             padding: 1rem;
             border-radius: 0.5rem;
             overflow-x: auto;
             font-family: monospace;
-            color: #f8fafc; /* light text */
+            color: #f8fafc;
             margin-top: 1rem;
         }
     </style>
@@ -70,7 +65,7 @@
                 🌐 Network Basics: Key Protocols
             </h1>
             <p class="mt-4 text-xl electric-blue">
-                Part 1: Clear explanations of the protocols that form the backbone of the internet.
+                Part 1: Deeper insights into the essential protocols that make modern networking possible.
             </p>
         </header>
 
@@ -84,13 +79,20 @@
                     <h2 class="text-2xl concept-title">IP (Internet Protocol)</h2>
                 </div>
                 <p>
-                    <strong>What it is:</strong> IP is the fundamental set of rules that governs the addressing and routing of data packets across networks. Think of it as the <strong>postal service</strong> of the internet: it makes sure a data package gets delivered from its source to the correct destination, regardless of how many different networks it has to cross.
+                    <strong>Full Form:</strong> Internet Protocol<br>
+                    <strong>Function:</strong> Provides logical addressing and routing for data packets across interconnected networks.
+                </p>
+                <p class="mt-3">
+                    IP defines how data packets should be addressed, transmitted, and delivered across networks. Every device connected to a network is assigned a unique IP address that identifies it logically, ensuring that packets reach the correct destination.
                 </p>
                 <ul class="list-disc list-inside space-y-1 mt-3 ml-4 text-slate-400">
-                    <li><strong>Addressing:</strong> IP defines the structure of the addresses used to identify devices (IP addresses).</li>
-                    <li><strong>Routing:</strong> It specifies how routers should forward these packets to reach their final destination efficiently.</li>
-                    <li><strong>Connectionless:</strong> IP does not establish a connection before sending data. It just shoots the packets out, relying on higher-layer protocols (like TCP) to ensure reliable delivery.</li>
+                    <li><strong>Addressing:</strong> IP assigns each device a unique numerical label (e.g., 192.168.1.1) for identification.</li>
+                    <li><strong>Routing:</strong> Routers use IP addresses to determine the most efficient path for data transmission.</li>
+                    <li><strong>Connectionless:</strong> IP doesn’t maintain a continuous connection — it sends packets independently.</li>
                 </ul>
+                <div class="mt-4">
+                    <strong>Example:</strong> When you load a webpage, IP ensures that the data from the server (e.g., 142.250.191.174 for Google) reaches your computer through multiple routers that forward the packets using the best route.
+                </div>
             </div>
 
             <!-- IPv4 and IPv6 -->
@@ -100,16 +102,19 @@
                     <h2 class="text-2xl concept-title">IPv4 vs. IPv6</h2>
                 </div>
                 <p>
-                    These are simply two different versions of the IP addressing scheme.
+                    <strong>Function:</strong> These are versions of the Internet Protocol that define how devices are addressed on a network.
                 </p>
                 <ul class="list-disc list-inside space-y-2 mt-3 ml-4 text-slate-400">
                     <li>
-                        <span class="electric-blue font-semibold">IPv4:</span> The original, most common format. Uses <strong>32-bit addresses</strong> (e.g., <code>192.168.1.1</code>). The problem is that it only allows for about 4.3 billion unique addresses, which we are running out of.
+                        <span class="electric-blue font-semibold">IPv4:</span> Uses 32-bit addresses (e.g., <code>192.168.1.1</code>), supporting about 4.3 billion unique addresses. It’s still widely used but limited in capacity due to global device growth.
                     </li>
                     <li>
-                        <span class="electric-blue font-semibold">IPv6:</span> The modern solution. Uses <strong>128-bit addresses</strong> (e.g., <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code>). This provides a virtually limitless number of unique addresses, securing the internet's future growth.
+                        <span class="electric-blue font-semibold">IPv6:</span> Uses 128-bit addresses (e.g., <code>2001:0db8:85a3::8a2e:0370:7334</code>), allowing for trillions of unique identifiers. It also improves efficiency and security with simpler header structures and built-in encryption.
                     </li>
                 </ul>
+                <div class="mt-4">
+                    <strong>Example:</strong> Modern ISPs and mobile networks increasingly rely on IPv6 to accommodate billions of new IoT devices, ensuring each one can have a globally unique address.
+                </div>
             </div>
 
             <!-- DHCP (Dynamic Host Configuration Protocol) -->
@@ -119,12 +124,20 @@
                     <h2 class="text-2xl concept-title">DHCP (Dynamic Host Configuration Protocol)</h2>
                 </div>
                 <p>
-                    <strong>What it is:</strong> DHCP is the protocol that automatically assigns <strong>IP addresses</strong> and other necessary network configuration parameters (like the Subnet Mask and Default Gateway) to devices on a network.
+                    <strong>Full Form:</strong> Dynamic Host Configuration Protocol<br>
+                    <strong>Function:</strong> Automatically assigns IP addresses and network configuration parameters to devices.
+                </p>
+                <p class="mt-3">
+                    DHCP simplifies network management by dynamically distributing network settings to devices when they connect. Instead of manually configuring IPs, subnet masks, and gateways, the DHCP server does it all automatically.
                 </p>
                 <ul class="list-disc list-inside space-y-1 mt-3 ml-4 text-slate-400">
-                    <li><strong>Automation:</strong> Without DHCP, you would have to manually configure the IP address for every new phone, laptop, or server. DHCP makes this instant and error-free.</li>
-                    <li><strong>The DORA Process:</strong> The client and server communicate using a four-step sequence called DORA: <strong>Discover</strong>, <strong>Offer</strong>, <strong>Request</strong>, and <strong>Acknowledge</strong>.</li>
+                    <li><strong>Automation:</strong> Devices (clients) request configuration when they join the network.</li>
+                    <li><strong>DORA Process:</strong> <strong>Discover</strong> → <strong>Offer</strong> → <strong>Request</strong> → <strong>Acknowledge</strong>.</li>
+                    <li><strong>Lease Time:</strong> IP addresses are temporary and periodically renewed.</li>
                 </ul>
+                <div class="mt-4">
+                    <strong>Example:</strong> When you connect your laptop to Wi-Fi, it sends a DHCP Discover broadcast. The router’s DHCP server offers an IP (e.g., 192.168.0.101), your laptop requests it, and the router acknowledges — instantly configuring your device.
+                </div>
             </div>
 
             <!-- DNS (Domain Name System) -->
@@ -134,12 +147,20 @@
                     <h2 class="text-2xl concept-title">DNS (Domain Name System)</h2>
                 </div>
                 <p>
-                    <strong>What it is:</strong> DNS acts as the <strong>phone book of the internet</strong>. Humans prefer to use memorable names (like <code>google.com</code>), but computers require numerical <strong>IP addresses</strong> (like <code>142.250.191.174</code>) to communicate.
+                    <strong>Full Form:</strong> Domain Name System<br>
+                    <strong>Function:</strong> Translates human-readable domain names into machine-readable IP addresses.
+                </p>
+                <p class="mt-3">
+                    The DNS is a distributed database that maps domain names to IP addresses. It allows users to type names like <code>www.example.com</code> instead of remembering complex IP numbers.
                 </p>
                 <ul class="list-disc list-inside space-y-1 mt-3 ml-4 text-slate-400">
-                    <li><strong>Resolution:</strong> When you type a website name, DNS translates that name into its corresponding IP address so your browser knows where to send the request.</li>
-                    <li><strong>Core Function:</strong> It is essential for web browsing, email, and almost every other internet service.</li>
+                    <li><strong>Resolution Process:</strong> When you enter a URL, your device queries DNS servers in order — local cache, recursive resolver, root server, TLD server, and authoritative server — until it finds the correct IP.</li>
+                    <li><strong>Hierarchy:</strong> Organized into layers (.com, .org, .net) and managed globally.</li>
+                    <li><strong>Caching:</strong> DNS results are cached locally for faster future lookups.</li>
                 </ul>
+                <div class="mt-4">
+                    <strong>Example:</strong> When you type <code>www.google.com</code> into your browser, your computer asks a DNS resolver for its IP. The resolver returns something like <code>142.250.191.174</code>, which your browser then uses to connect to Google’s web server.
+                </div>
             </div>
 
         </section>
