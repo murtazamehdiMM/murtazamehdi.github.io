@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Knight's Den</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+        }
+        .electric-blue {
+            color: #22d3ee;
+        }
+        .card {
+            background-color: #1e293b;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            border: 1px solid #334155;
+            transition: border-color 0.3s;
+        }
+        .card:hover {
+            border-color: #22d3ee;
+        }
+        .section-header {
+            border-bottom: 2px solid #22d3ee;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        a:hover {
+            color: #22d3ee;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen p-6 sm:p-12 text-slate-300">
+
+    <!-- Back to Home -->
+    <a href="index.html" class="inline-flex items-center text-slate-400 hover:text-cyan-400 transition duration-200 mb-10">
+        <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i>
+        Back to Knight's Den 
+    </a>
+
+    <main class="max-w-5xl mx-auto bg-slate-800 rounded-xl shadow-2xl p-8 sm:p-12">
+
+        <!-- Header -->
+        <header class="mb-12">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white section-header">
+                📬 Contact & About
+            </h1>
+            <p class="text-lg electric-blue mt-4">
+                Let’s connect, collaborate, and explore technology together.
+            </p>
+        </header>
+
+        <!-- Contact Information -->
+        <section class="card mb-10">
+            <h2 class="text-3xl font-bold text-white mb-4">Contact Information</h2>
+            <p class="mb-4 text-slate-300">
+                The following are my preferred ways to get in touch:
+            </p>
+            <div class="space-y-3">
+                <p>
+                    <i data-lucide="linkedin" class="inline w-5 h-5 mr-2 text-cyan-400"></i>
+                    <a href="https://www.linkedin.com/in/murtaza-mehdi-5441a2367" target="_blank" class="underline">LinkedIn Profile</a>
+                </p>
+                <p>
+                    <i data-lucide="mail" class="inline w-5 h-5 mr-2 text-cyan-400"></i>
+                    <a href="mailto:murtazamehdi66@gmail.com" class="underline">murtazamehdi66@gmail.com</a>
+                </p>
+                <p>
+                    <i data-lucide="instagram" class="inline w-5 h-5 mr-2 text-cyan-400"></i>
+                    <a href="https://www.instagram.com/taza.py" target="_blank" class="underline">@taza.py</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Web Development Skills -->
+        <section class="card mb-10">
+            <h2 class="text-3xl font-bold text-white mb-4">Web Development Skills and Experience</h2>
+            <p class="text-slate-300 mb-4">
+                I possess basic to intermediate-level skills in HTML and CSS. During the creation of this website, I made use of open-source templates and tools, along with the assistance of modern AI models such as ChatGPT and Gemini.
+            </p>
+            <p class="text-slate-300 mb-4">
+                Leveraging AI for web design is remarkably efficient and reliable, but having a foundational understanding of logic and structural design principles is essential. AI can assist with implementation, yet the vision and logical flow must come from the creator.
+            </p>
+            <p class="text-slate-300">
+                If you wish to have a personal or professional website hosted on GitHub like this one, feel free to reach out through any of the contact options above. I am open to discussions and collaboration on suitable terms.
+            </p>
+        </section>
+
+        <!-- Personal Interests -->
+        <section class="card">
+            <h2 class="text-3xl font-bold text-white mb-4">Personal Interests</h2>
+            <p class="text-slate-300 mb-4">
+                Beyond technology, I hold a deep appreciation for philosophy and literature. My reading interests include the works of Fyodor Dostoevsky, Albert Camus, and Franz Kafka. Their explorations of human nature and existential themes resonate strongly with me.
+            </p>
+            <p class="text-slate-300 mb-4">
+                I am also fond of investigative and psychological television series such as <em>True Detective</em>, <em>Luther</em>, and <em>Mindhunter</em>. These stories of analysis, perception, and uncovering hidden truths have influenced my curiosity and ultimately sparked my interest in cybersecurity — a form of digital detective work.
+            </p>
+            <p class="text-slate-300">
+                In many ways, technology and philosophy intersect in the search for understanding — whether through code or contemplation.
+            </p>
+        </section>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
