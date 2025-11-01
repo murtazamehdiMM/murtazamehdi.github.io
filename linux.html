@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux: Core Command Tutorial</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+        }
+        .electric-blue {
+            color: #22d3ee;
+        }
+        .section-header {
+            border-bottom: 2px solid #22d3ee;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .concept-card {
+            background-color: #1e293b;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid #334155;
+            transition: border-color 0.3s;
+        }
+        .concept-card:hover {
+            border-color: #22d3ee;
+        }
+        .command-box {
+            background-color: #0c121e;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: monospace;
+            color: #f8fafc;
+            margin-top: 0.75rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #22d3ee;
+        }
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #334155;
+            border: 2px dashed #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-weight: 600;
+            margin-top: 1rem;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-8">
+
+    <!-- Back to Home -->
+    <a href="index.html" class="inline-flex items-center text-slate-400 hover:text-cyan-400 transition duration-200 mb-8">
+        <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i>
+        Back to Knight's Den Home
+    </a>
+
+    <main class="w-full max-w-7xl mx-auto bg-slate-800 rounded-xl shadow-2xl overflow-hidden p-8 sm:p-12 text-slate-300">
+
+        <!-- Header -->
+        <header class="mb-10">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white section-header">
+                🐧 Linux: Core Command Tutorial
+            </h1>
+            <p class="mt-4 text-xl electric-blue">
+                Learning essential command-line operations using Kali Linux in a virtualized environment.
+            </p>
+        </header>
+
+        <!-- Introduction -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-white mb-4">Introduction</h2>
+            <div class="concept-card">
+                <p class="mb-4">
+                    Linux is an open-source operating system that powers most of the world’s servers, supercomputers, and cybersecurity platforms. In this practical session, we’ll use <strong>Kali Linux</strong>—a Debian-based distribution designed for ethical hacking and security testing—already configured inside a virtual machine.
+                </p>
+                <ul class="list-disc list-inside space-y-2 ml-4 text-slate-400">
+                    <li>
+                        <span class="electric-blue font-semibold">Virtual Machine (VM):</span> A software-based computer that allows multiple operating systems to run independently on one physical system. It’s ideal for safely experimenting with Linux without affecting your host OS.
+                    </li>
+                    <li>
+                        <span class="electric-blue font-semibold">Debian Command Family:</span> Debian is one of the oldest Linux bases. Distributions built from it—such as Kali, Ubuntu, and Linux Mint—share identical terminal commands. This consistency makes your skills universally applicable across most modern Linux systems.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Part 1 -->
+        <section class="mb-12 pt-4 border-t border-slate-700">
+            <h2 class="text-3xl font-bold text-white section-header">Part 1: Movement and Location</h2>
+            <div class="space-y-6">
+                
+                <div class="concept-card">
+                    <h3 class="text-xl font-semibold electric-blue mb-3">Command: <code class="text-white">pwd</code> — Print Working Directory</h3>
+                    <p>
+                        Displays your current location within the Linux file system. It shows the full path from the root directory to where you currently are.
+                    </p>
+                    <div class="command-box">
+                        <span class="text-cyan-400">user@kali:~$</span> pwd
+                    </div>
+                    <p class="text-sm italic text-slate-400">This command revealed our current location in the system hierarchy.</p>
+                    <div class="image-placeholder">Placeholder for Screenshot 1 (852x502) - pwd output</div>
+                </div>
+
+                <div class="concept-card">
+                    <h3 class="text-xl font-semibold electric-blue mb-3">Command: <code class="text-white">ls</code> — List Directory Contents</h3>
+                    <p>
+                        Lists all files and folders in your present directory. It’s the primary way to explore what’s stored in your current location.
+                    </p>
+                    <div class="command-box">
+                        <span class="text-cyan-400">user@kali:~$</span> ls
+                    </div>
+                    <p class="text-sm italic text-slate-400">Here, we listed all directories and files in our user’s home directory (<code class="text-white">/home/user</code>).</p>
+                    <div class="image-placeholder">Placeholder for Screenshot 2 (852x502) - ls output</div>
+                </div>
+
+                <div class="concept-card">
+                    <h3 class="text-xl font-semibold electric-blue mb-3">Command: <code class="text-white">cd</code> — Change Directory</h3>
+                    <p>
+                        Allows you to move between directories in the system hierarchy.
+                    </p>
+                    <div class="command-box">
+                        <span class="text-cyan-400">user@kali:~$</span> cd Desktop
+                    </div>
+                    <p class="text-sm italic text-slate-400">We used <code class="text-white">cd</code> to move into the Desktop directory to start our exercises.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 2 -->
+        <section class="mb-12 pt-4 border-t border-slate-700">
+            <h2 class="text-3xl font-bold text-white section-header">Part 2: Directory Creation and Inspection</h2>
+            <div class="concept-card">
+                <h3 class="text-xl font-semibold electric-blue mb-3">Command: <code class="text-white">mkdir</code> — Make Directory</h3>
+                <p>
+                    Creates a new directory in your current location. It’s commonly used for organizing files and project folders.
+                </p>
+                <div class="command-box">
+                    <span class="text-cyan-400">user@kali:~/Desktop/Linux$</span> ls <br>
+                    <span class="text-cyan-400">user@kali:~/Desktop/Linux$</span> mkdir Learn_C <br>
+                    <span class="text-cyan-400">user@kali:~/Desktop/Linux$</span> cd Learn_C
+                </div>
+                <p class="text-sm italic text-slate-400">We listed the contents of the Linux directory, created a new folder called Learn_C, and navigated into it.</p>
+                <div class="image-placeholder">Placeholder for Screenshot 3 (852x502)</div>
+            </div>
+        </section>
+
+        <!-- Part 3 -->
+        <section class="mb-12 pt-4 border-t border-slate-700">
+            <h2 class="text-3xl font-bold text-white section-header">Part 3: File Creation and Viewing</h2>
+            <div class="space-y-6">
+                <div class="concept-card">
+                    <h3 class="text-xl font-semibold electric-blue mb-3">Command: <code class="text-white">nano</code> — Text Editor</h3>
+                    <p>Opens a simple terminal-based text editor to create or modify text files.</p>
+                    <div class="command-box">
+                        <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> nano tutorial.txt
+                    </div>
+                    <p class="text-sm italic text-slate-400">We created a new text file named tutorial.txt, added content, and saved it.</p>
+                </div>
+
+                <div class="concept-card">
+                    <h3 class="text-xl font-semibold electric-blue mb-3">Command: <code class="text-white">cat</code> — Display File Content</h3>
+                    <p>Reads and prints a file’s contents directly in the terminal window.</p>
+                    <div class="command-box">
+                        <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> cat tutorial.txt <br>
+                        <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> rm tutorial.txt <br>
+                        <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> cd ..
+                    </div>
+                    <p class="text-sm italic text-slate-400">We displayed the contents of tutorial.txt using cat, deleted it using rm, and navigated one directory up with cd ..</p>
+                    <div class="image-placeholder">Placeholder for Screenshot 4 (852x502)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 4 -->
+        <section class="mb-12 pt-4 border-t border-slate-700">
+            <h2 class="text-3xl font-bold text-white section-header">Part 4: Directory Cleanup</h2>
+            <div class="concept-card">
+                <h3 class="text-xl font-semibold electric-blue mb-3">Command: <code class="text-white">rmdir</code> — Remove Directory</h3>
+                <p>Deletes an empty directory. It’s often used for tidying up unused folders once files have been removed.</p>
+                <div class="command-box">
+                    <span class="text-cyan-400">user@kali:~/Desktop/Linux$</span> ls <br>
+                    <span class="text-cyan-400">user@kali:~/Desktop/Linux$</span> rmdir Learn_A Learn_B <br>
+                    <span class="text-cyan-400">user@kali:~/Desktop/Linux$</span> ls
+                </div>
+                <p class="text-sm italic text-slate-400">After removing Learn_A and Learn_B, only Learn_C remains, confirming the cleanup.</p>
+                <div class="image-placeholder">Placeholder for Screenshot 5 (852x502)</div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="mt-16 pt-8 border-t border-slate-700">
+            <h2 class="text-3xl font-bold text-white section-header">Conclusion</h2>
+            <p class="text-lg text-slate-400">
+                This concludes the Linux Core Command Tutorial. You’ve practiced navigating directories, creating and editing files, and performing clean-up operations using foundational Linux commands. These basics form the backbone of system administration and cybersecurity workflows. Thank you for exploring this educational segment of the Knight’s Den — where we make complex systems simple to understand.
+            </p>
+        </section>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
