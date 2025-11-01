@@ -165,21 +165,113 @@
 
         </section>
 
-        <!-- Placeholder for Part 2 -->
-        <section class="mt-16 pt-8 border-t border-slate-700">
-            <h2 class="text-3xl font-bold text-white section-header">
-                ⚙️ Part 2: Practical Application with Cisco Packet Tracer
-            </h2>
-            <p class="text-lg text-slate-400 mb-6">
-                This section will showcase hands-on scenarios to demonstrate these protocols in action.
-            </p>
-            <div class="bg-slate-700 p-6 rounded-lg text-center">
-                <p class="text-xl electric-blue">Content for Cisco Packet Tracer labs coming soon...</p>
-                <p class="mt-2 text-slate-400">We will detail the setup and configuration commands for DHCP and static IP scenarios here.</p>
-            </div>
-        </section>
-    
-    </main>
+        <!-- Cisco Practical Section -->
+<section class="mt-16 pt-8 border-t border-slate-700">
+    <h2 class="text-3xl font-bold text-white section-header">
+        🧠 Cisco Practical IP Address
+    </h2>
+    <p class="text-lg text-slate-400 mb-6">
+        In this section, we’ll perform a simple practical demonstration of how IP addressing works using Cisco Packet Tracer. We’ll also verify device communication using the <strong>ping</strong> command.
+    </p>
+
+    <!-- Explanation of Cisco Packet Tracer -->
+    <div class="card mb-8">
+        <div class="flex items-center mb-4">
+            <i data-lucide="cpu" class="electric-blue w-6 h-6 mr-3"></i>
+            <h3 class="text-2xl concept-title">What is Cisco Packet Tracer?</h3>
+        </div>
+        <p>
+            <strong>Cisco Packet Tracer</strong> is a sophisticated network simulation and visualization tool developed by <strong>Cisco Systems</strong>. It enables users to design, configure, and troubleshoot complex network topologies virtually — without requiring any physical networking equipment. 
+        </p>
+        <p class="mt-3">
+            The tool replicates real-world networking environments by allowing users to add devices such as routers, switches, computers, and servers. It also supports packet-level simulations, so you can observe how data travels across networks and how various protocols interact. 
+        </p>
+        <p class="mt-3">
+            Packet Tracer is widely used in Cisco’s <strong>Networking Academy</strong> and by network professionals to build their conceptual understanding, test configurations safely, and prepare for certifications like <strong>CCNA (Cisco Certified Network Associate)</strong>.
+        </p>
+    </div>
+
+    <!-- Explanation of Ping -->
+    <div class="card mb-12">
+        <div class="flex items-center mb-4">
+            <i data-lucide="activity" class="electric-blue w-6 h-6 mr-3"></i>
+            <h3 class="text-2xl concept-title">What is the Ping Command?</h3>
+        </div>
+        <p>
+            The <strong>ping (Packet Internet Groper)</strong> command is a diagnostic network tool used to test connectivity between two devices on a network. It works by sending <strong>ICMP Echo Request</strong> packets to a target device and waiting for <strong>ICMP Echo Reply</strong> responses.
+        </p>
+        <p class="mt-3">
+            The ping command helps determine if a destination host is reachable, how long it takes for data to travel to and from that host (latency), and whether packet loss is occurring. It’s one of the simplest yet most powerful tools for verifying basic network communication and troubleshooting connection issues.
+        </p>
+        <div class="mt-3">
+            <strong>Example:</strong> If PC A sends a ping to PC B using the address <code>192.168.1.2</code>, and PC B replies successfully, it confirms that both computers are correctly configured and communicating on the same network.
+        </div>
+    </div>
+
+    <!-- Phase 1 -->
+    <div class="card mb-8">
+        <h3 class="text-2xl concept-title mb-3">Phase 1: Setting Up the Network Topology</h3>
+        <p>
+            We begin by opening Cisco Packet Tracer and placing two end devices — <strong>PC A</strong> and <strong>PC B</strong> — onto the workspace. These will represent two computers on the same local network.
+        </p>
+        <div class="mt-4 flex justify-center">
+            <img src="sample1111" alt="Phase 1 - Two computers placed in Cisco Packet Tracer" width="607" height="499" class="rounded-lg border border-slate-700 shadow-md">
+        </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="card mb-8">
+        <h3 class="text-2xl concept-title mb-3">Phase 2: Connecting the Devices</h3>
+        <p>
+            Next, we connect <strong>PC A</strong> and <strong>PC B</strong> using a straight-through <strong>Ethernet cable</strong>. In this setup, we’re focusing solely on IP addressing and direct communication, so no routers or switches are involved at this stage.
+        </p>
+        <p class="mt-3">
+            This direct connection allows both computers to exchange data within a single network segment, simulating a simple peer-to-peer connection.
+        </p>
+        <div class="mt-4 flex justify-center">
+            <img src="sample1111" alt="Phase 2 - PCs connected using Ethernet cable" width="607" height="499" class="rounded-lg border border-slate-700 shadow-md">
+        </div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="card mb-8">
+        <h3 class="text-2xl concept-title mb-3">Phase 3: Assigning IP Addresses</h3>
+        <p>
+            Each computer is assigned a unique <strong>IPv4 address</strong> within the same network. 
+        </p>
+        <ul class="list-disc list-inside mt-3 ml-4 text-slate-400">
+            <li>PC A → <code>192.168.1.1</code></li>
+            <li>PC B → <code>192.168.1.2</code></li>
+        </ul>
+        <p class="mt-3">
+            Both IPs are part of the same subnet (<code>255.255.255.0</code> by default), which means they can communicate directly without any routing device. Once assigned, the IP configuration should be verified using the desktop settings inside Packet Tracer.
+        </p>
+        <div class="mt-4 flex justify-center">
+            <img src="sample1111" alt="Phase 3 - IP configuration on both PCs" width="607" height="499" class="rounded-lg border border-slate-700 shadow-md">
+        </div>
+    </div>
+
+    <!-- Phase 4 -->
+    <div class="card mb-8">
+        <h3 class="text-2xl concept-title mb-3">Phase 4: Testing Connectivity Using Ping</h3>
+        <p>
+            To test whether the two devices can communicate, we open the <strong>Command Prompt</strong> on <strong>PC A</strong> and execute the ping command:
+        </p>
+        <div class="code-block mt-3">
+            ping 192.168.1.2
+        </div>
+        <p class="mt-3">
+            If the network setup and IP configuration are correct, <strong>PC B</strong> will respond to the ping with an ICMP reply message. This confirms that both computers recognize each other on the network and are successfully exchanging packets.
+        </p>
+        <p class="mt-3">
+            This is the fundamental concept of IP connectivity — devices communicate using IP addresses, and the ping command validates that communication path.
+        </p>
+        <div class="mt-4 flex justify-center">
+            <img src="sample1111" alt="Phase 4 - Successful ping reply from PC B" width="607" height="499" class="rounded-lg border border-slate-700 shadow-md">
+        </div>
+    </div>
+</section>
+
 
     <!-- Script to initialize Lucide icons -->
     <script>
@@ -187,3 +279,4 @@
     </script>
 </body>
 </html>
+
