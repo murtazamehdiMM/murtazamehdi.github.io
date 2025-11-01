@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linux: Core Command Tutorial</title>
-    <!-- Load Tailwind CSS -->
+    <title>Linux Practical Basics | Knight’s Den</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons -->
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -25,7 +28,7 @@
         .concept-card {
             background-color: #1e293b;
             padding: 1.5rem;
-            border-radius: 0.5rem;
+            border-radius: 0.75rem;
             border: 1px solid #334155;
             transition: border-color 0.3s;
         }
@@ -43,21 +46,17 @@
             margin-bottom: 1rem;
             border-left: 4px solid #22d3ee;
         }
-        .image-placeholder {
+        img.command-image {
             width: 100%;
-            height: 300px;
-            background-color: #334155;
-            border: 2px dashed #64748b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-            font-weight: 600;
-            margin-top: 1rem;
+            max-width: 852px;
+            height: auto;
             border-radius: 0.5rem;
+            margin-top: 1rem;
+            border: 2px solid #334155;
         }
     </style>
 </head>
+
 <body class="min-h-screen p-4 sm:p-8">
 
     <!-- Back to Home -->
@@ -68,31 +67,27 @@
 
     <main class="w-full max-w-7xl mx-auto bg-slate-800 rounded-xl shadow-2xl overflow-hidden p-8 sm:p-12 text-slate-300">
 
-        <!-- Header -->
         <header class="mb-10">
             <h1 class="text-4xl sm:text-5xl font-extrabold text-white section-header">
-                🐧 Linux: Core Command Tutorial
+                🐧 Linux Practical Basics
             </h1>
             <p class="mt-4 text-xl electric-blue">
-                Learning essential command-line operations using Kali Linux in a virtualized environment.
+                Exploring core Linux commands and terminal operations using Kali Linux.
             </p>
         </header>
 
-        <!-- Introduction -->
         <section class="mb-12">
             <h2 class="text-3xl font-bold text-white mb-4">Introduction</h2>
             <div class="concept-card">
                 <p class="mb-4">
-                    Linux is an open-source operating system that powers most of the world’s servers, supercomputers, and cybersecurity platforms. In this practical session, we’ll use <strong>Kali Linux</strong>—a Debian-based distribution designed for ethical hacking and security testing—already configured inside a virtual machine.
+                    The Linux operating system is a powerful open-source platform that forms the backbone of most modern servers, embedded systems, and cybersecurity environments. For this session, we are using Kali Linux, a Debian-based distribution designed specifically for cybersecurity and ethical hacking, running inside a virtual machine for safe experimentation.
                 </p>
-                <ul class="list-disc list-inside space-y-2 ml-4 text-slate-400">
-                    <li>
-                        <span class="electric-blue font-semibold">Virtual Machine (VM):</span> A software-based computer that allows multiple operating systems to run independently on one physical system. It’s ideal for safely experimenting with Linux without affecting your host OS.
-                    </li>
-                    <li>
-                        <span class="electric-blue font-semibold">Debian Command Family:</span> Debian is one of the oldest Linux bases. Distributions built from it—such as Kali, Ubuntu, and Linux Mint—share identical terminal commands. This consistency makes your skills universally applicable across most modern Linux systems.
-                    </li>
-                </ul>
+                <p class="mb-4">
+                    A virtual machine (VM) is a software-based emulation of a computer that allows you to run another operating system within your existing one. Using tools like VirtualBox or VMware, we can run Kali Linux without altering our main system, offering flexibility and isolation.
+                </p>
+                <p>
+                    Debian-based systems such as Kali Linux, Ubuntu, and Linux Mint share a common set of terminal commands. This makes learning these commands universally useful across many environments.
+                </p>
             </div>
         </section>
 
@@ -100,40 +95,22 @@
         <section class="mb-12 pt-4 border-t border-slate-700">
             <h2 class="text-3xl font-bold text-white section-header">Part 1: Movement and Location</h2>
             <div class="space-y-6">
-                
                 <div class="concept-card">
-                    <h3 class="text-xl font-semibold electric-blue mb-3">Command: <code class="text-white">pwd</code> — Print Working Directory</h3>
+                    <h3 class="text-xl font-semibold electric-blue mb-3">Commands Used: pwd, ls, cd</h3>
                     <p>
-                        Displays your current location within the Linux file system. It shows the full path from the root directory to where you currently are.
+                        We start by exploring how to check our current location in the file system, list directory contents, and move between folders. The <code class="text-white">pwd</code> (Print Working Directory) command displays the absolute path of the current working directory, helping us know where we are in the file structure. The <code class="text-white">ls</code> command lists the files and directories present in the current location. The <code class="text-white">cd</code> (Change Directory) command allows us to navigate from one directory to another.
                     </p>
                     <div class="command-box">
-                        <span class="text-cyan-400">user@kali:~$</span> pwd
+                        user@kali:~$ pwd<br>
+                        /home/knight5oul<br><br>
+                        user@kali:~$ ls<br>
+                        Desktop  Documents  Downloads  Music  Pictures<br><br>
+                        user@kali:~$ cd Desktop
                     </div>
-                    <p class="text-sm italic text-slate-400">This command revealed our current location in the system hierarchy.</p>
-                    <div class="image-placeholder">Placeholder for Screenshot 1 (852x502) - pwd output</div>
-                </div>
-
-                <div class="concept-card">
-                    <h3 class="text-xl font-semibold electric-blue mb-3">Command: <code class="text-white">ls</code> — List Directory Contents</h3>
                     <p>
-                        Lists all files and folders in your present directory. It’s the primary way to explore what’s stored in your current location.
+                        In this step, we confirmed that we were in the home directory of user <strong>knight5oul</strong>, viewed the available directories using <code>ls</code>, and then moved to the Desktop directory using <code>cd Desktop</code>.
                     </p>
-                    <div class="command-box">
-                        <span class="text-cyan-400">user@kali:~$</span> ls
-                    </div>
-                    <p class="text-sm italic text-slate-400">Here, we listed all directories and files in our user’s home directory (<code class="text-white">/home/user</code>).</p>
-                    <div class="image-placeholder">Placeholder for Screenshot 2 (852x502) - ls output</div>
-                </div>
-
-                <div class="concept-card">
-                    <h3 class="text-xl font-semibold electric-blue mb-3">Command: <code class="text-white">cd</code> — Change Directory</h3>
-                    <p>
-                        Allows you to move between directories in the system hierarchy.
-                    </p>
-                    <div class="command-box">
-                        <span class="text-cyan-400">user@kali:~$</span> cd Desktop
-                    </div>
-                    <p class="text-sm italic text-slate-400">We used <code class="text-white">cd</code> to move into the Desktop directory to start our exercises.</p>
+                    <img src="images/l1.png" alt="Linux terminal showing pwd, ls, and cd commands" class="command-image">
                 </div>
             </div>
         </section>
@@ -141,18 +118,25 @@
         <!-- Part 2 -->
         <section class="mb-12 pt-4 border-t border-slate-700">
             <h2 class="text-3xl font-bold text-white section-header">Part 2: Directory Creation and Inspection</h2>
-            <div class="concept-card">
-                <h3 class="text-xl font-semibold electric-blue mb-3">Command: <code class="text-white">mkdir</code> — Make Directory</h3>
-                <p>
-                    Creates a new directory in your current location. It’s commonly used for organizing files and project folders.
-                </p>
-                <div class="command-box">
-                    <span class="text-cyan-400">user@kali:~/Desktop/Linux$</span> ls <br>
-                    <span class="text-cyan-400">user@kali:~/Desktop/Linux$</span> mkdir Learn_C <br>
-                    <span class="text-cyan-400">user@kali:~/Desktop/Linux$</span> cd Learn_C
+            <div class="space-y-6">
+                <div class="concept-card">
+                    <h3 class="text-xl font-semibold electric-blue mb-3">Commands Used: ls, cd, mkdir</h3>
+                    <p>
+                        Once inside the Desktop, we used <code class="text-white">ls</code> to check for any directories, then entered the “Linux” directory using <code class="text-white">cd Linux</code>. Here, the <code class="text-white">mkdir</code> (Make Directory) command was used to create a new folder named <strong>Learn_C</strong>. This directory joins the existing ones, Learn_A and Learn_B, helping us organize our workspace.
+                    </p>
+                    <div class="command-box">
+                        user@kali:~/Desktop$ ls<br>
+                        Linux  Projects<br><br>
+                        user@kali:~/Desktop$ cd Linux<br><br>
+                        user@kali:~/Desktop/Linux$ ls<br>
+                        Learn_A  Learn_B<br><br>
+                        user@kali:~/Desktop/Linux$ mkdir Learn_C
+                    </div>
+                    <p>
+                        The <code>mkdir</code> command helps create directories for file organization. Using <code>ls</code> afterwards confirms the new folder’s presence. This reflects standard file management through the terminal.
+                    </p>
+                    <img src="images/l2.png" alt="Linux terminal showing mkdir and directory navigation" class="command-image">
                 </div>
-                <p class="text-sm italic text-slate-400">We listed the contents of the Linux directory, created a new folder called Learn_C, and navigated into it.</p>
-                <div class="image-placeholder">Placeholder for Screenshot 3 (852x502)</div>
             </div>
         </section>
 
@@ -161,41 +145,65 @@
             <h2 class="text-3xl font-bold text-white section-header">Part 3: File Creation and Viewing</h2>
             <div class="space-y-6">
                 <div class="concept-card">
-                    <h3 class="text-xl font-semibold electric-blue mb-3">Command: <code class="text-white">nano</code> — Text Editor</h3>
-                    <p>Opens a simple terminal-based text editor to create or modify text files.</p>
+                    <h3 class="text-xl font-semibold electric-blue mb-3">Commands Used: nano, cat</h3>
+                    <p>
+                        Inside the Learn_C directory, we used <code class="text-white">nano</code> to create a text file named <strong>tutorial.txt</strong>. The Nano text editor is a simple and user-friendly command-line tool that allows direct editing of text files. After typing some content and saving it, we used the <code class="text-white">cat</code> command to display the content of the file directly in the terminal.
+                    </p>
                     <div class="command-box">
-                        <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> nano tutorial.txt
+                        user@kali:~/Desktop/Linux/Learn_C$ nano tutorial.txt<br>
+                        (text entered and saved)<br><br>
+                        user@kali:~/Desktop/Linux/Learn_C$ cat tutorial.txt
                     </div>
-                    <p class="text-sm italic text-slate-400">We created a new text file named tutorial.txt, added content, and saved it.</p>
-                </div>
-
-                <div class="concept-card">
-                    <h3 class="text-xl font-semibold electric-blue mb-3">Command: <code class="text-white">cat</code> — Display File Content</h3>
-                    <p>Reads and prints a file’s contents directly in the terminal window.</p>
-                    <div class="command-box">
-                        <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> cat tutorial.txt <br>
-                        <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> rm tutorial.txt <br>
-                        <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> cd ..
-                    </div>
-                    <p class="text-sm italic text-slate-400">We displayed the contents of tutorial.txt using cat, deleted it using rm, and navigated one directory up with cd ..</p>
-                    <div class="image-placeholder">Placeholder for Screenshot 4 (852x502)</div>
+                    <p>
+                        The <code>cat</code> command quickly verifies the content of files and is particularly useful for reviewing configuration or script files without opening them in an editor.
+                    </p>
+                    <img src="images/l3.png" alt="Linux terminal showing nano and cat commands" class="command-image">
                 </div>
             </div>
         </section>
 
         <!-- Part 4 -->
         <section class="mb-12 pt-4 border-t border-slate-700">
-            <h2 class="text-3xl font-bold text-white section-header">Part 4: Directory Cleanup</h2>
-            <div class="concept-card">
-                <h3 class="text-xl font-semibold electric-blue mb-3">Command: <code class="text-white">rmdir</code> — Remove Directory</h3>
-                <p>Deletes an empty directory. It’s often used for tidying up unused folders once files have been removed.</p>
-                <div class="command-box">
-                    <span class="text-cyan-400">user@kali:~/Desktop/Linux$</span> ls <br>
-                    <span class="text-cyan-400">user@kali:~/Desktop/Linux$</span> rmdir Learn_A Learn_B <br>
-                    <span class="text-cyan-400">user@kali:~/Desktop/Linux$</span> ls
+            <h2 class="text-3xl font-bold text-white section-header">Part 4: File Deletion and Verification</h2>
+            <div class="space-y-6">
+                <div class="concept-card">
+                    <h3 class="text-xl font-semibold electric-blue mb-3">Command Used: rm</h3>
+                    <p>
+                        The <code class="text-white">rm</code> command (Remove) is used to delete files permanently. Once a file is removed using this command, it does not go to a recycle bin; it is deleted from the file system. After removing the file, we used <code class="text-white">ls</code> again to confirm that the file had been successfully deleted.
+                    </p>
+                    <div class="command-box">
+                        user@kali:~/Desktop/Linux/Learn_C$ rm tutorial.txt<br><br>
+                        user@kali:~/Desktop/Linux/Learn_C$ ls
+                    </div>
+                    <p>
+                        This process ensures that the directory Learn_C is now empty, which allows further cleanup or new file creation in subsequent steps.
+                    </p>
+                    <img src="images/l4.png" alt="Linux terminal showing rm command and ls verification" class="command-image">
                 </div>
-                <p class="text-sm italic text-slate-400">After removing Learn_A and Learn_B, only Learn_C remains, confirming the cleanup.</p>
-                <div class="image-placeholder">Placeholder for Screenshot 5 (852x502)</div>
+            </div>
+        </section>
+
+        <!-- Part 5 -->
+        <section class="mb-12 pt-4 border-t border-slate-700">
+            <h2 class="text-3xl font-bold text-white section-header">Part 5: Directory Cleanup</h2>
+            <div class="space-y-6">
+                <div class="concept-card">
+                    <h3 class="text-xl font-semibold electric-blue mb-3">Command Used: rmdir</h3>
+                    <p>
+                        To clean up the workspace, we navigated back to the Linux directory and listed its contents using <code class="text-white">ls</code>. The <code class="text-white">rmdir</code> command (Remove Directory) was then used to delete the two empty directories, <strong>Learn_A</strong> and <strong>Learn_B</strong>. Running <code class="text-white">ls</code> again confirmed that only <strong>Learn_C</strong> remained.
+                    </p>
+                    <div class="command-box">
+                        user@kali:~/Desktop/Linux$ ls<br>
+                        Learn_A  Learn_B  Learn_C<br><br>
+                        user@kali:~/Desktop/Linux$ rmdir Learn_A Learn_B<br><br>
+                        user@kali:~/Desktop/Linux$ ls<br>
+                        Learn_C
+                    </div>
+                    <p>
+                        The <code>rmdir</code> command is only applicable to empty folders. For directories containing files, the <code>rm -r</code> (recursive remove) command would be required.
+                    </p>
+                    <img src="images/l5.png" alt="Linux terminal showing rmdir command and confirmation" class="command-image">
+                </div>
             </div>
         </section>
 
@@ -203,7 +211,7 @@
         <section class="mt-16 pt-8 border-t border-slate-700">
             <h2 class="text-3xl font-bold text-white section-header">Conclusion</h2>
             <p class="text-lg text-slate-400">
-                This concludes the Linux Core Command Tutorial. You’ve practiced navigating directories, creating and editing files, and performing clean-up operations using foundational Linux commands. These basics form the backbone of system administration and cybersecurity workflows. Thank you for exploring this educational segment of the Knight’s Den — where we make complex systems simple to understand.
+                In this Linux practical, we explored the fundamental file management and navigation commands essential for operating within the terminal environment. From identifying locations with <code>pwd</code> and listing contents with <code>ls</code> to creating, editing, and deleting files and directories using <code>mkdir</code>, <code>nano</code>, <code>cat</code>, <code>rm</code>, and <code>rmdir</code>, each operation builds core familiarity with the Linux filesystem. Mastery of these foundational commands forms the basis for advanced scripting, automation, and server management.
             </p>
         </section>
 
