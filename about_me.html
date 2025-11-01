@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MURTAZA MEHDI | About Me</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Font and Global Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Stormy Heavy Grey background */
+            background-color: #0f172a; /* Tailwind bg-slate-900 */
+        }
+        /* Custom class for the Electric Blue text/accent color */
+        .electric-blue {
+            color: #22d3ee; /* Tailwind text-cyan-400 */
+        }
+        .header-bg {
+            background-color: #1e293b; /* Slightly lighter slate for contrast */
+        }
+        .section-header {
+            border-bottom: 2px solid #22d3ee; /* Electric blue separator */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        /* Styling for the skill badges */
+        .skill-badge {
+            background-color: #1e293b; /* Dark badge background */
+            color: #22d3ee; /* Electric blue text */
+            border: 1px solid #334155; /* Subtle border */
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-8">
+
+    <!-- Back to Home Link -->
+    <a href="index.html" class="inline-flex items-center text-slate-400 hover:electric-blue transition duration-200 mb-8">
+        <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i>
+        Back to Knight's Den Home
+    </a>
+
+    <main class="w-full max-w-7xl mx-auto bg-slate-800 rounded-xl shadow-2xl overflow-hidden">
+        
+        <!-- Header Section (Contact removed) -->
+        <div class="header-bg p-8 sm:p-12 border-b border-slate-700">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white">MURTAZA MEHDI</h1>
+            <p class="text-xl sm:text-2xl electric-blue mt-2">IT SYSTEMS ADMINISTRATION GRADUATE</p>
+            <p class="mt-4 text-slate-400 max-w-3xl">
+                A recent graduate with a Level 5 qualification in Network and Systems Administration. Experienced in databases, programming, Cisco networking, and server management, I also have foundational cybersecurity knowledge. I am passionate about system configuration and aim to contribute to IT infrastructure, systems administration, or cybersecurity teams.
+            </p>
+        </div>
+
+        <!-- Professional Bio & Motivation Section -->
+        <div class="p-8 sm:p-12 text-slate-300 border-b border-slate-700">
+            <h2 class="text-3xl font-bold text-white section-header">Professional Ethos</h2>
+            <div class="grid md:grid-cols-2 gap-8 mt-4">
+                <div class="bg-slate-700 p-6 rounded-lg">
+                    <h3 class="electric-blue text-xl font-semibold mb-3">Core Philosophy</h3>
+                    <p class="leading-relaxed">
+                        My digital identity, **'Knightsoul,'** reflects a long-standing passion for complex problem-solving and dedication across all digital domains. This professional platform serves not only to showcase my technical competence but also to share valuable information with the community.
+                    </p>
+                </div>
+                <div class="bg-slate-700 p-6 rounded-lg">
+                    <h3 class="electric-blue text-xl font-semibold mb-3">Ambition & Drive</h3>
+                    <p class="leading-relaxed">
+                        I am driven by a continuous desire to learn, grow, and master sophisticated IT environments. My ultimate ambition is to pursue a specialized career in **Cybersecurity**, tackling real-world threats and reinforcing digital infrastructures with expertise and precision.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main CV Sections -->
+        <div class="grid lg:grid-cols-3 gap-8 p-8 sm:p-12">
+            
+            <!-- Skills Column (Lg: 1/3) -->
+            <section class="lg:col-span-1">
+                <h2 class="text-3xl font-bold text-white section-header">Technical Skills</h2>
+                <div class="flex flex-wrap gap-2 text-sm">
+                    <!-- Programming -->
+                    <span class="skill-badge px-3 py-1 rounded-full">Python</span>
+                    <span class="skill-badge px-3 py-1 rounded-full">Java</span>
+                    <span class="skill-badge px-3 py-1 rounded-full">PHP</span>
+                    <span class="skill-badge px-3 py-1 rounded-full">SQL & PostgreSQL</span>
+                    <!-- OS & Scripting -->
+                    <span class="skill-badge px-3 py-1 rounded-full">Linux (Debian / Kali)</span>
+                    <span class="skill-badge px-3 py-1 rounded-full">Windows Server AD</span>
+                    <span class="skill-badge px-3 py-1 rounded-full">PowerShell</span>
+                    <span class="skill-badge px-3 py-1 rounded-full">Bash Scripting</span>
+                    <!-- Networking -->
+                    <span class="skill-badge px-3 py-1 rounded-full">Cisco Networking</span>
+                    <span class="skill-badge px-3 py-1 rounded-full">TCP/IP & IPv4/IPv6</span>
+                    <span class="skill-badge px-3 py-1 rounded-full">DHCP/DNS</span>
+                    <span class="skill-badge px-3 py-1 rounded-full">VPN Management</span>
+                    <!-- Cybersecurity -->
+                    <span class="skill-badge px-3 py-1 rounded-full">Nmap Scanning</span>
+                    <span class="skill-badge px-3 py-1 rounded-full">Penetration Testing</span>
+                    <span class="skill-badge px-3 py-1 rounded-full">Vulnerability Scanning</span>
+                    <span class="skill-badge px-3 py-1 rounded-full">IDS Concepts</span>
+                    <!-- Tools & Data -->
+                    <span class="skill-badge px-3 py-1 rounded-full">Power BI</span>
+                    <span class="skill-badge px-3 py-1 rounded-full">SharePoint Integration</span>
+                    <span class="skill-badge px-3 py-1 rounded-full">Data Automation</span>
+                </div>
+
+                <h2 class="text-3xl font-bold text-white section-header mt-8">Certifications</h2>
+                <ul class="space-y-3 text-slate-400">
+                    <li class="flex items-start">
+                        <i data-lucide="award" class="w-5 h-5 electric-blue flex-shrink-0 mt-1 mr-2"></i>
+                        <a href="https://coursera.org/share/0ea510d8730af9e0318eb37cb9b01f22" target="_blank" class="hover:electric-blue transition duration-200">
+                            Google Cyber Security
+                        </a>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="award" class="w-5 h-5 electric-blue flex-shrink-0 mt-1 mr-2"></i>
+                        <a href="https://tryhackme.com/certificate/THM-HAJ1FVEMPC" target="_blank" class="hover:electric-blue transition duration-200">
+                            Junior Penetration Tester 
+                            <span class="ml-2 text-xs text-slate-500">(TryHackMe)</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            
+            <!-- Experience & Education Column (Lg: 2/3) -->
+            <section class="lg:col-span-2 text-slate-300">
+                <h2 class="text-3xl font-bold text-white section-header">Experience</h2>
+                
+                <!-- Experience Item 1 -->
+                <div class="mb-6 pb-6 border-b border-slate-700 last:border-b-0">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-xl font-semibold electric-blue">DATA MANAGEMENT INTERN</h3>
+                        <span class="text-sm text-slate-400">May 2025 – Sep 2025</span>
+                    </div>
+                    <p class="text-lg font-medium text-white mt-1">TAP AIR Portugal | Lisboa</p>
+                    <ul class="list-disc list-inside space-y-1 mt-2 text-slate-400">
+                        <li>Automated over 4,000 maintenance documents using Python, exporting data to Excel, SQL, and Access databases.</li>
+                        <li>Developed Power BI reports leveraging SharePoint data to track equipment status and maintenance history, improving visibility.</li>
+                        <li>Created a user-friendly GUI to manage maintenance datasets for non-technical staff.</li>
+                        <li>Applied AI techniques to optimize workflows and meet demanding project deadlines.</li>
+                    </ul>
+                </div>
+                
+                <!-- Experience Item 2 -->
+                <div class="mb-6 pb-6 border-b border-slate-700 last:border-b-0">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-xl font-semibold electric-blue">VOCATIONAL TRAINEE</h3>
+                        <span class="text-sm text-slate-400">Nov 2024 – Feb 2025</span>
+                    </div>
+                    <p class="text-lg font-medium text-white mt-1">Instituto de Formação | Santarém</p>
+                    <ul class="list-disc list-inside space-y-1 mt-2 text-slate-400">
+                        <li>Prepared and configured classroom systems, including projectors, desktop computers, and networked printers.</li>
+                        <li>Managed user accounts and permissions, providing essential IT assistance to staff across the campus.</li>
+                        <li>Configured and secured computers to meet specific requirements for security staff.</li>
+                    </ul>
+                </div>
+
+                <h2 class="text-3xl font-bold text-white section-header mt-8">Education</h2>
+
+                <!-- Education Item 1 -->
+                <div class="mb-6 last:mb-0">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-xl font-semibold electric-blue">TÉCNICO ESPECIALISTA EM GESTÃO DE REDES E SISTEMAS INFORMÁTICOS QNQ 5</h3>
+                        <span class="text-sm text-slate-400">Sep 2024 – Sep 2025</span>
+                    </div>
+                    <p class="text-lg font-medium text-white mt-1">Centro de Formação Profissional de Santarém</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center p-4 text-slate-600 border-t border-slate-800">
+            <p>Ready to deploy on GitHub Pages.</p>
+        </footer>
+
+    </main>
+
+    <!-- Script to initialize Lucide icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
