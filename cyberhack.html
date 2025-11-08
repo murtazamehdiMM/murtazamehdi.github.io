@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offensive Cyber: Password Cracking Simulation</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+        }
+        .electric-blue {
+            color: #22d3ee;
+        }
+        .section-header {
+            border-bottom: 2px solid #22d3ee;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .concept-card {
+            background-color: #1e293b;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid #334155;
+            transition: border-color 0.3s;
+        }
+        .concept-card:hover {
+            border-color: #22d3ee;
+        }
+        .command-box {
+            background-color: #0c121e;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: monospace;
+            color: #f8fafc;
+            margin-top: 0.75rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #22d3ee;
+        }
+        .image-placeholder {
+            width: 100%;
+            max-width: 917px;
+            height: 567px;
+            background-color: #334155;
+            border: 2px dashed #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-weight: 600;
+            margin: 1.5rem auto;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .disclaimer {
+            background-color: #1e293b;
+            border-left: 4px solid #ef4444;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-8">
+
+    <!-- Back to Home -->
+    <a href="index.html" class="inline-flex items-center text-slate-400 hover:text-cyan-400 transition duration-200 mb-8">
+        <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i>
+        Back to Knight's Den Home
+    </a>
+
+    <main class="w-full max-w-7xl mx-auto bg-slate-800 rounded-xl shadow-2xl overflow-hidden p-8 sm:p-12 text-slate-300">
+
+        <!-- Header -->
+        <header class="mb-10">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white section-header">
+                Offensive Cyber: Password Cracking Simulation
+            </h1>
+            <p class="mt-4 text-xl electric-blue">
+                Ethical demonstration of password-protected ZIP cracking using Kali Linux.
+            </p>
+        </header>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer text-sm md:text-base">
+            <p class="text-red-400 font-semibold mb-2">⚠️ Ethical & Legal Disclaimer</p>
+            <p>
+                All techniques demonstrated here were performed in a <strong>controlled, isolated virtual environment</strong> using Kali Linux. 
+                Unauthorized access, password cracking, or any form of cyber intrusion on systems you do not own or have explicit permission to test is 
+                <strong>illegal</strong> in most jurisdictions and <strong>unethical</strong>. 
+                This tutorial is for <strong>educational and defensive security purposes only</strong>. Always obtain written consent before testing any system.
+            </p>
+        </div>
+
+        <!-- Part 1: Setup File -->
+        <section class="mb-12 pt-4 border-t border-slate-700">
+            <h2 class="text-3xl font-bold text-white section-header">Part 1: Preparing the Target File</h2>
+            <div class="concept-card">
+                <p>
+                    For this simulation, we created a simple text file named <code class="text-white">findme.txt</code> inside the directory:
+                    <br><code class="text-white">~/Desktop/Linux/Learn_C/</code>
+                </p>
+                <p class="mt-3">
+                    This path is not mandatory but keeps our practice organized and isolated from the rest of the system.
+                </p>
+                <div class="command-box">
+                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> echo "Secret message: Welcome to the vault!" > findme.txt<br>
+                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> ls
+                </div>
+                <p class="text-sm italic text-slate-400">We created <code>findme.txt</code> and verified its existence using <code>ls</code>.</p>
+                <div class="image-placeholder">Placeholder for Screenshot 1 (917x)</div> <!-- xxxx -->
+            </div>
+        </section>
+
+        <!-- Part 2: ZIP Encryption -->
+        <section class="mb-12 pt-4 border-t border-slate-700">
+            <h2 class="text-3xl font-bold text-white section-header">Part 2: Password-Protecting the File</h2>
+            <div class="concept-card">
+                <p>
+                    We now compress and encrypt <code>findme.txt</code> into a password-protected ZIP archive using the <code>zip</code> command with the <code>-e</code> flag (encrypt).
+                    <br><strong>Password used:</strong> <code>admin1234</code> (simple for demonstration).
+                </p>
+                <div class="command-box">
+                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> zip -e vault.zip findme.txt<br>
+                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> rm findme.txt<br>
+                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> ls
+                </div>
+                <p class="text-sm italic text-slate-400">
+                    The original file is deleted to simulate a "locked vault" scenario. Only <code>vault.zip</code> remains.
+                </p>
+                <div class="image-placeholder">Placeholder for Screenshot 2 (917x567) - ZIP creation</div> <!-- xxxx -->
+            </div>
+        </section>
+
+        <!-- Part 3: Extracting Hash -->
+        <section class="mb-12 pt-4 border-t border-slate-700">
+            <h2 class="text-3xl font-bold text-white section-header">Part 3: Extracting the Password Hash</h2>
+            <div class="concept-card">
+                <p>
+                    <code>zip2john</code> is a tool from the <strong>John the Ripper</strong> suite that extracts the <strong>encrypted hash</strong> from a ZIP file.
+                    <br>A <strong>hash</strong> is a one-way mathematical representation of the password — we cannot reverse it, but we can <em>guess</em> until we match it.
+                </p>
+                <div class="command-box">
+                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> zip2john vault.zip > password.hash<br>
+                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> ls
+                </div>
+                <p class="text-sm italic text-slate-400">
+                    Output: <code>vault.zip</code> and <code>password.hash</code> — ready for cracking.
+                </p>
+                <div class="image-placeholder">Placeholder for Screenshot 3 (917x567) - Hash extraction</div> <!-- xxxx -->
+            </div>
+        </section>
+
+        <!-- Part 4: Cracking with John -->
+        <section class="mb-12 pt-4 border-t border-slate-700">
+            <h2 class="text-3xl font-bold text-white section-header">Part 4: Wordlist Attack with John the Ripper</h2>
+            <div class="concept-card">
+                <p>
+                    <strong>John the Ripper</strong> is a password cracking tool. We use a <strong>wordlist</strong> — a list of common passwords — to guess the ZIP password.
+                    <br><code>rockyou.txt</code> is a famous leaked wordlist from a 2009 breach containing over 14 million real passwords.
+                </p>
+                <p class="mt-2">
+                    You can also create custom wordlists using tools like <code>crunch</code> or <code>CeWL</code>.
+                </p>
+                <div class="command-box">
+                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> john --wordlist=/usr/share/wordlists/rockyou.txt password.hash
+                </div>
+                <p class="text-sm italic text-slate-400 mt-3">
+                    <strong>Result:</strong> Password cracked: <code class="text-green-400">admin1234</code>
+                </p>
+                <div class="image-placeholder">Placeholder for Screenshot 4 (917x567) - John cracking output</div> <!-- xxxx -->
+            </div>
+        </section>
+
+        <!-- Part 5: Extracting the File -->
+        <section class="mb-12 pt-4 border-t border-slate-700">
+            <h2 class="text-3xl font-bold text-white section-header">Part 5: Unlocking the Vault</h2>
+            <div class="concept-card">
+                <p>
+                    With the password recovered, we can now extract the original file using <code>unzip</code>.
+                </p>
+                <div class="command-box">
+                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> unzip vault.zip<br>
+                    <span class="text-cyan-400">password:</span> admin1234<br>
+                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> ls<br>
+                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> cat findme.txt
+                </div>
+                <p class="text-sm italic text-slate-400">
+                    Success! The secret message is revealed: <code class="text-green-400">"Secret message: Welcome to the vault!"</code>
+                </p>
+                <div class="image-placeholder">Placeholder for Screenshot 5 (917x567) - Final extraction</div> <!-- xxxx -->
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="mt-16 pt-8 border-t border-slate-700">
+            <h2 class="text-3xl font-bold text-white section-header">Conclusion</h2>
+            <p class="text-lg text-slate-400">
+                This simulation demonstrated a full password cracking workflow: from encryption to hash extraction, wordlist attack, and successful decryption.
+            </p>
+            <p class="mt-4 text-red-400 font-semibold">
+                Remember: <strong>Only use these skills defensively</strong>. Strengthen your own systems. Teach others. Never harm.
+            </p>
+            <p class="mt-4">
+                Ethical hacking is about <strong>protection</strong>, not destruction. Stay on the right side of the law — and the keyboard.
+            </p>
+
+            <!-- Back to Home Button -->
+            <div class="mt-8 text-center">
+                <a href="index.html" class="inline-flex items-center px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-semibold rounded-lg transition duration-300">
+                    <i data-lucide="home" class="w-5 h-5 mr-2"></i>
+                    Back to Knight's Den
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
