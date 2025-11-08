@@ -32,31 +32,12 @@
         .concept-card:hover {
             border-color: #22d3ee;
         }
-        .command-box {
-            background-color: #0c121e;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            overflow-x: auto;
-            font-family: monospace;
-            color: #f8fafc;
-            margin-top: 0.75rem;
-            margin-bottom: 1rem;
-            border-left: 4px solid #22d3ee;
-        }
-        .image-placeholder {
-            width: 100%;
-            max-width: 917px;
-            height: 567px;
-            background-color: #334155;
-            border: 2px dashed #64748b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-            font-weight: 600;
-            margin: 1.5rem auto;
-            border-radius: 0.5rem;
-            font-size: 1.1rem;
+        .image-space {
+            margin: 2.5rem auto;
+            text-align: center;
+            font-style: italic;
+            color: #64748b;
+            font-size: 0.95rem;
         }
         .disclaimer {
             background-color: #1e293b;
@@ -64,6 +45,18 @@
             padding: 1rem 1.5rem;
             margin-bottom: 2rem;
             border-radius: 0.5rem;
+        }
+        .code-inline {
+            background-color: #0c121e;
+            color: #22d3ee;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.375rem;
+            font-family: monospace;
+            font-size: 0.95em;
+        }
+        .term {
+            font-weight: 600;
+            color: #22d3ee;
         }
     </style>
 </head>
@@ -89,7 +82,7 @@
 
         <!-- Disclaimer -->
         <div class="disclaimer text-sm md:text-base">
-            <p class="text-red-400 font-semibold mb-2">⚠️ Ethical & Legal Disclaimer</p>
+            <p class="text-red-400 font-semibold mb-2">Ethical & Legal Disclaimer</p>
             <p>
                 All techniques demonstrated here were performed in a <strong>controlled, isolated virtual environment</strong> using Kali Linux. 
                 Unauthorized access, password cracking, or any form of cyber intrusion on systems you do not own or have explicit permission to test is 
@@ -103,18 +96,20 @@
             <h2 class="text-3xl font-bold text-white section-header">Part 1: Preparing the Target File</h2>
             <div class="concept-card">
                 <p>
-                    For this simulation, we created a simple text file named <code class="text-white">findme.txt</code> inside the directory:
-                    <br><code class="text-white">~/Desktop/Linux/Learn_C/</code>
+                    We begin by creating a plain text file named <span class="code-inline">findme.txt</span> in the directory:
+                    <br><span class="code-inline">~/Desktop/Linux/Learn_C/</span>
                 </p>
                 <p class="mt-3">
-                    This path is not mandatory but keeps our practice organized and isolated from the rest of the system.
+                    This path is optional but recommended to keep our practice organized and isolated from the rest of the system.
                 </p>
-                <div class="command-box">
-                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> echo "Secret message: Welcome to the vault!" > findme.txt<br>
-                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> ls
-                </div>
-                <p class="text-sm italic text-slate-400">We created <code>findme.txt</code> and verified its existence using <code>ls</code>.</p>
-                <div class="images/cy1.png">Placeholder for Screenshot 1 (917x)</div> <!-- xxxx -->
+                <p class="mt-3">
+                    <strong>Command used:</strong>
+                    <br><span class="code-inline">echo "Secret message: Welcome to the vault!" > findme.txt</span>
+                    <br>Followed by <span class="code-inline">ls</span> to confirm the file was created.
+                </p>
+
+                <!-- Dedicated space for your screenshot -->
+                <div class="images/cy1.png">[ Screenshot 1: Creating and Verifying the File ]</div>
             </div>
         </section>
 
@@ -123,18 +118,24 @@
             <h2 class="text-3xl font-bold text-white section-header">Part 2: Password-Protecting the File</h2>
             <div class="concept-card">
                 <p>
-                    We now compress and encrypt <code>findme.txt</code> into a password-protected ZIP archive using the <code>zip</code> command with the <code>-e</code> flag (encrypt).
-                    <br><strong>Password used:</strong> <code>admin1234</code> (simple for demonstration).
+                    We now compress and encrypt <span class="code-inline">findme.txt</span> into a password-protected ZIP archive.
                 </p>
-                <div class="command-box">
-                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> zip -e vault.zip findme.txt<br>
-                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> rm findme.txt<br>
-                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> ls
-                </div>
-                <p class="text-sm italic text-slate-400">
-                    The original file is deleted to simulate a "locked vault" scenario. Only <code>vault.zip</code> remains.
+                <p class="mt-3">
+                    <strong>Tool:</strong> <span class="term">zip</span> — a command-line utility for creating compressed archives.
+                    <br><strong>Command:</strong> <span class="code-inline">zip -e vault.zip findme.txt</span>
+                    <br>The <code>-e</code> flag enables <strong>encryption</strong> and prompts for a password.
                 </p>
-                <div class="images/cy2.png">Placeholder for Screenshot 2 (917x567) - ZIP creation</div> <!-- xxxx -->
+                <p class="mt-3">
+                    <strong>Password used:</strong> <span class="code-inline">admin1234</span> (intentionally weak for educational purposes).
+                </p>
+                <p class="mt-3">
+                    After creation, we remove the original file:
+                    <br><span class="code-inline">rm findme.txt</span>
+                    <br>Then use <span class="code-inline">ls</span> to confirm only <span class="code-inline">vault.zip</span> remains.
+                </p>
+
+                <!-- Dedicated space for your screenshot -->
+                <div class="images/cy2.png">[ Screenshot 2: Creating and Securing the ZIP Archive ]</div>
             </div>
         </section>
 
@@ -143,17 +144,22 @@
             <h2 class="text-3xl font-bold text-white section-header">Part 3: Extracting the Password Hash</h2>
             <div class="concept-card">
                 <p>
-                    <code>zip2john</code> is a tool from the <strong>John the Ripper</strong> suite that extracts the <strong>encrypted hash</strong> from a ZIP file.
-                    <br>A <strong>hash</strong> is a one-way mathematical representation of the password — we cannot reverse it, but we can <em>guess</em> until we match it.
+                    To crack the password, we first need to extract its <strong>hash</strong>.
                 </p>
-                <div class="command-box">
-                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> zip2john vault.zip > password.hash<br>
-                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> ls
-                </div>
-                <p class="text-sm italic text-slate-400">
-                    Output: <code>vault.zip</code> and <code>password.hash</code> — ready for cracking.
+                <p class="mt-3">
+                    <strong>Term: Hash</strong> — A <em>one-way mathematical transformation</em> of the original password. It cannot be reversed, but if we guess the correct password, we can generate the same hash and confirm a match.
                 </p>
-                <div class="images/cy4.png">Placeholder for Screenshot 3 (917x567) - Hash extraction</div> <!-- xxxx -->
+                <p class="mt-3">
+                    <strong>Tool:</strong> <span class="term">zip2john</span> — A utility from the <strong>John the Ripper</strong> suite that extracts password hashes from ZIP files.
+                    <br><strong>Command:</strong> <span class="code-inline">zip2john vault.zip > password.hash</span>
+                </p>
+                <p class="mt-3">
+                    This saves the hash into a file named <span class="code-inline">password.hash</span>.
+                    <br>We then run <span class="code-inline">ls</span> to confirm both files exist.
+                </p>
+
+                <!-- Dedicated space for your screenshot -->
+                <div class="images/cy4.png">[ Screenshot 3: Extracting the Password Hash ]</div>
             </div>
         </section>
 
@@ -162,44 +168,56 @@
             <h2 class="text-3xl font-bold text-white section-header">Part 4: Wordlist Attack with John the Ripper</h2>
             <div class="concept-card">
                 <p>
-                    <strong>John the Ripper</strong> is a password cracking tool. We use a <strong>wordlist</strong> — a list of common passwords — to guess the ZIP password.
-                    <br><code>rockyou.txt</code> is a famous leaked wordlist from a 2009 breach containing over 14 million real passwords.
+                    We now attempt to recover the password using a <strong>wordlist attack</strong>.
                 </p>
-                <p class="mt-2">
-                    You can also create custom wordlists using tools like <code>crunch</code> or <code>CeWL</code>.
+                <p class="mt-3">
+                    <strong>Term: Wordlist</strong> — A text file containing thousands or millions of common passwords, leaked credentials, or dictionary words used to guess passwords systematically.
                 </p>
-                <div class="command-box">
-                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> john --wordlist=/usr/share/wordlists/rockyou.txt password.hash
-                </div>
-                <p class="text-sm italic text-slate-400 mt-3">
-                    <strong>Result:</strong> Password cracked: <code class="text-green-400">admin1234</code>
+                <p class="mt-3">
+                    <strong>Tool: John the Ripper</strong> — One of the most widely used open-source password cracking tools. It supports multiple attack modes, including wordlist-based guessing.
                 </p>
-                <div class="images/cy5.png">Placeholder for Screenshot 4 (917x567) - John cracking output</div> <!-- xxxx -->
+                <p class="mt-3">
+                    <strong>Wordlist used:</strong> <span class="code-inline">rockyou.txt</span>
+                    <br>A famous wordlist from a 2009 data breach containing over <strong>14 million real passwords</strong>. It is included by default in Kali Linux at:
+                    <br><span class="code-inline">/usr/share/wordlists/rockyou.txt</span>
+                </p>
+                <p class="mt-3">
+                    <strong>Command:</strong>
+                    <br><span class="code-inline">john --wordlist=/usr/share/wordlists/rockyou.txt password.hash</span>
+                </p>
+                <p class="mt-3">
+                    <strong>Result:</strong> The password <span class="text-green-400 font-semibold">admin1234</span> was successfully discovered.
+                </p>
+
+                <!-- Dedicated space for your screenshot -->
+                <div class="images/cy5.png">[ Screenshot 4: Password Cracked Using John ]</div>
             </div>
         </section>
 
-                <!-- Part 5: Extracting the File -->
+        <!-- Part 5: Extracting the File -->
         <section class="mb-12 pt-4 border-t border-slate-700">
             <h2 class="text-3xl font-bold text-white section-header">Part 5: Unlocking the Vault</h2>
             <div class="concept-card">
                 <p>
-                    With the password recovered, we can now extract the original file using <code>unzip</code>.
+                    With the password now known, we can extract the contents of the ZIP archive.
                 </p>
-                <div class="command-box">
-                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> unzip vault.zip<br>
-                    <span class="text-cyan-400">password:</span> admin1234<br>
-                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> ls<br>
-                    <span class="text-cyan-400">user@kali:~/Desktop/Linux/Learn_C$</span> cat findme.txt
-                </div>
-                <p class="text-sm italic text-slate-400">
-                    Success! The secret message is revealed: <code class="text-green-400">"Secret message: Welcome to the vault!"</code>
+                <p class="mt-3">
+                    <strong>Command:</strong> <span class="code-inline">unzip vault.zip</span>
+                    <br>When prompted, enter: <span class="code-inline">admin1234</span>
+                </p>
+                <p class="mt-3">
+                    After extraction, we run:
+                    <br><span class="code-inline">ls</span> — to confirm <span class="code-inline">findme.txt</span> is back
+                    <br><span class="code-inline">cat findme.txt</span> — to display the secret message
+                </p>
+                <p class="mt-3">
+                    <strong>Success!</strong> The message reads:
+                    <br><span class="text-green-400">"Secret message: Welcome to the vault!"</span>
                 </p>
 
-                <!-- xxxx: Insert Screenshot 5A Here -->
+                <!-- Two dedicated spaces for your screenshots -->
                 <div class="images/cy6.png">[ Screenshot 5A: Unzipping the File ]</div>
-
-                <!-- xxxx: Insert Screenshot 5B Here -->
-                <div class="images/cy7.png">[ Screenshot 5B: Viewing File Content with cat ]</div>
+                <div class="images/cy7.png">[ Screenshot 5B: Viewing the Recovered Message ]</div>
             </div>
         </section>
 
@@ -207,13 +225,13 @@
         <section class="mt-16 pt-8 border-t border-slate-700">
             <h2 class="text-3xl font-bold text-white section-header">Conclusion</h2>
             <p class="text-lg text-slate-400">
-                This simulation demonstrated a full password cracking workflow: from encryption to hash extraction, wordlist attack, and successful decryption.
+                This simulation demonstrated a complete offensive cybersecurity workflow: from creating a protected file to cracking its password using real-world tools and techniques.
             </p>
             <p class="mt-4 text-red-400 font-semibold">
-                Remember: <strong>Only use these skills defensively</strong>. Strengthen your own systems. Teach others. Never harm.
+                Remember: <strong>These skills are for defense only</strong>. Use them to test and secure your own systems — never to harm others.
             </p>
             <p class="mt-4">
-                Ethical hacking is about <strong>protection</strong>, not destruction. Stay on the right side of the law — and the keyboard.
+                Ethical hacking is about <strong>protection</strong>, not exploitation. Stay legal. Stay ethical. Stay sharp.
             </p>
 
             <!-- Back to Home Button -->
