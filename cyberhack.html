@@ -74,15 +74,12 @@
     </style>
 </head>
 <body class="min-h-screen p-4 sm:p-8">
-
     <!-- Back to Home -->
     <a href="index.html" class="inline-flex items-center text-slate-400 hover:text-cyan-400 transition duration-200 mb-8">
         <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i>
         Back to Knight's Den Home
     </a>
-
     <main class="w-full max-w-7xl mx-auto bg-slate-800 rounded-xl shadow-2xl overflow-hidden p-8 sm:p-12 text-slate-300">
-
         <!-- Header -->
         <header class="mb-10">
             <h1 class="text-4xl sm:text-5xl font-extrabold text-white section-header">
@@ -92,7 +89,6 @@
                 Cracking password-protected ZIP files using John the Ripper in Kali Linux.
             </p>
         </header>
-
         <!-- Disclaimer Warning Box -->
         <div class="warning-box">
             <p>
@@ -101,17 +97,16 @@
                 This tutorial is for educational purposes only to understand how weak passwords can be exploited and why strong security matters.
             </p>
         </div>
-
         <!-- What is John? -->
         <section class="mb-12">
             <div class="concept-card">
                 <h2 class="text-2xl font-bold text-white mb-4">What is John the Ripper?</h2>
                 <p class="mb-4">
-                    <strong class="electric-blue">John the Ripper</strong> — often just called <code class="text-white">john</code> — is one of the most powerful and widely respected password-cracking tools in cybersecurity.
+                    <strong class="electric-blue">John the Ripper</strong>, often just called <code class="text-white">john</code>, is one of the most powerful and widely respected password-cracking tools in cybersecurity.
                     Originally developed in 1996, it’s now a staple in Kali Linux and used by ethical hackers, penetration testers, and security researchers worldwide.
                 </p>
                 <p class="mb-4">
-                    Think of it as a <em>digital lockpicker</em>. It doesn’t “guess” passwords randomly instead, it uses smart techniques like:
+                    Think of it as a <em>digital lockpicker</em>. It doesn’t “guess” passwords randomly; instead, it uses smart techniques like:
                 </p>
                 <ul class="list-disc list-inside space-y-2 ml-4 text-slate-400">
                     <li><span class="electric-blue font-semibold">Dictionary attacks</span>: Trying common words and phrases from a <strong>wordlist</strong> (like <code>rockyou.txt</code>, a famous leaked password database).</li>
@@ -119,11 +114,10 @@
                     <li><span class="electric-blue font-semibold">Hybrid attacks</span>: Combining wordlists with rules (e.g., adding “123” to the end of words).</li>
                 </ul>
                 <p class="mt-4">
-                    In this tutorial, we’ll use John to crack a password-protected <strong>ZIP file</strong> — a common real-world scenario in penetration testing when recovering or auditing archived data.
+                    In this tutorial, we’ll use John to crack a password-protected <strong>ZIP file</strong>, a common real-world scenario in penetration testing when recovering or auditing archived data.
                 </p>
             </div>
         </section>
-
         <!-- Phase 1 -->
         <section class="mb-12 pt-4 border-t border-slate-700">
             <h2 class="text-3xl font-bold text-white section-header">Phase 1: Setting Up Our Lab Environment</h2>
@@ -137,15 +131,14 @@
                     <li>Inside it, made a subfolder named <code class="text-white">Learn_C</code>.</li>
                 </ul>
                 <p class="mt-4">
-                    Inside <code class="text-white">Learn_C</code>, we created a simple text file called <code class="text-white">findme.txt</code> and added some secret content. This file will be our "treasure" but soon, it’ll be locked away.
+                    Inside <code class="text-white">Learn_C</code>, we created a simple text file called <code class="text-white">findme.txt</code> and added some secret content. This file will be our "treasure", but soon, it’ll be locked away.
                 </p>
                 <img src="images/cy1.png" alt="Setting up Learn_C directory and creating findme.txt" class="tutorial-image">
             </div>
         </section>
-
         <!-- Phase 2 -->
         <section class="mb-12 pt-4 border-t border-slate-700">
-            <h2 class="text-3xl font-bold text-white section-header">Phase 2: Creating a Password-Protected ZIP  ZIP Archive</h2>
+            <h2 class="text-3xl font-bold text-white section-header">Phase 2: Creating a Password-Protected ZIP Archive</h2>
             <div class="concept-card">
                 <p>
                     Using the built-in <code class="text-white">zip</code> tool, we encrypted our <code class="text-white">findme.txt</code> file into a password-protected archive:
@@ -154,7 +147,7 @@
                     zip -e vault.zip findme.txt
                 </div>
                 <p class="mt-3">
-                    The <code class="text-white">-e</code> flag tells <code>zip</code> to <strong>encrypt</strong> the file and prompt for a password. We chose a simple one on purpose: <code class="text-white">admin1234</code> — so the cracking process finishes quickly for demo purposes.
+                    The <code class="text-white">-e</code> flag tells <code>zip</code> to <strong>encrypt</strong> the file and prompt for a password. We chose a simple one on purpose: <code class="text-white">admin1234</code>, so the cracking process finishes quickly for demo purposes.
                 </p>
                 <p class="mt-3">
                     Now, <code class="text-white">vault.zip</code> contains our encrypted text file. Without the password, the contents are inaccessible.
@@ -162,7 +155,6 @@
                 <img src="images/cy2.png" alt="Running zip -e to create vault.zip" class="tutorial-image">
             </div>
         </section>
-
         <!-- Phase 3 -->
         <section class="mb-12 pt-4 border-t border-slate-700">
             <h2 class="text-3xl font-bold text-white section-header">Phase 3: Cleaning Up & Verifying the Archive</h2>
@@ -180,21 +172,20 @@
                     ls
                 </div>
                 <p class="mt-3">
-                    Result: Only <code class="text-white">vault.zip</code> remains. The original file is gone — now the only way to access the data is by cracking the ZIP password.
+                    Result: Only <code class="text-white">vault.zip</code> remains. The original file is gone, now the only way to access the data is by cracking the ZIP password.
                 </p>
                 <img src="images/cy3.png" alt="Only vault.zip remains after cleanup" class="tutorial-image">
             </div>
         </section>
-
         <!-- Phase 4 -->
         <section class="mb-12 pt-4 border-t border-slate-700">
             <h2 class="text-3xl font-bold text-white section-header">Phase 4: Extracting the Password Hash</h2>
             <div class="concept-card">
                 <p>
-                    John the Ripper cannot crack ZIP files directly — it needs the <strong>password hash</strong> first. A hash is a one-way mathematical fingerprint of the password.
+                    John the Ripper cannot crack ZIP files directly, it needs the <strong>password hash</strong> first. A hash is a one-way mathematical fingerprint of the password.
                 </p>
                 <p class="mt-3">
-                    We used <code class="text-white">zip2john</code> — a helper tool that comes with John, to extract the hash from <code class="text-white">vault.zip</code>:
+                    We used <code class="text-white">zip2john</code>, a helper tool that comes with John, to extract the hash from <code class="text-white">vault.zip</code>:
                 </p>
                 <div class="command-box">
                     zip2john vault.zip > password.hash
@@ -208,13 +199,12 @@
                 <img src="images/cy4.png" alt="zip2john output and ls showing password.hash" class="tutorial-image">
             </div>
         </section>
-
         <!-- Phase 5 -->
         <section class="mb-12 pt-4 border-t border-slate-700">
             <h2 class="text-3xl font-bold text-white section-header">Phase 5: Cracking the Password with John</h2>
             <div class="concept-card">
                 <p>
-                    Time to unleash <strong>John the Ripper</strong>. We launched a <strong>dictionary attack</strong> using the famous <code class="text-white">rockyou.txt</code> wordlist — a collection of over 14 million real leaked passwords.
+                    Time to unleash <strong>John the Ripper</strong>. We launched a <strong>dictionary attack</strong> using the famous <code class="text-white">rockyou.txt</code> wordlist, a collection of over 14 million real leaked passwords.
                 </p>
                 <div class="command-box">
                     john --wordlist=/usr/share/wordlists/rockyou.txt password.hash
@@ -223,12 +213,11 @@
                     John began testing passwords at high speed. Within seconds, it <strong>successfully cracked</strong> the password: <code class="text-white">admin1234</code>.
                 </p>
                 <p class="mt-3">
-                    <span class="electric-blue font-semibold">Pro Tip:</span> In real engagements, attackers often build custom wordlists using <strong>social engineering</strong> — gathering info about the target (birthdays, pet names, favorite teams) to create highly effective password guesses.
+                    <span class="electric-blue font-semibold">Pro Tip:</span> In real engagements, attackers often build custom wordlists using <strong>social engineering</strong>, gathering info about the target (birthdays, pet names, favorite teams) to create highly effective password guesses.
                 </p>
                 <img src="images/cy5.png" alt="John successfully cracks admin1234" class="tutorial-image">
             </div>
         </section>
-
         <!-- Phase 6 -->
         <section class="mb-12 pt-4 border-t border-slate-700">
             <h2 class="text-3xl font-bold text-white section-header">Phase 6: Accessing the Protected File</h2>
@@ -240,12 +229,11 @@
                     unzip vault.zip
                 </div>
                 <p class="mt-3">
-                    The system prompted for the password. We entered <code class="text-white">admin1234</code>, and the file extracted successfully — <code class="text-white">findme.txt</code> is back!
+                    The system prompted for the password. We entered <code class="text-white">admin1234</code>, and the file extracted successfully, <code class="text-white">findme.txt</code> is back!
                 </p>
                 <img src="images/cy6.png" alt="unzip with password prompt and success" class="tutorial-image">
             </div>
         </section>
-
         <!-- Phase 7 -->
         <section class="mb-12 pt-4 border-t border-slate-700">
             <h2 class="text-3xl font-bold text-white section-header">Phase 7: Revealing the Hidden Message</h2>
@@ -265,13 +253,12 @@
                 <img src="images/cy7.png" alt="cat findme.txt showing secret message" class="tutorial-image">
             </div>
         </section>
-
         <!-- Conclusion -->
         <section class="mt-16 pt-8 border-t border-slate-700">
             <h2 class="text-3xl font-bold text-white section-header">Conclusion</h2>
             <div class="concept-card p-6">
                 <p class="text-lg text-slate-400 mb-6">
-                    You've just walked through a complete <strong>ethical password recovery workflow</strong> using John the Ripper. From hash extraction to successful cracking — every step mirrors real-world penetration testing techniques.
+                    You've just walked through a complete <strong>ethical password recovery workflow</strong> using John the Ripper. From hash extraction to successful cracking, every step mirrors real-world penetration testing techniques.
                 </p>
                 <p class="text-lg text-slate-400 mb-6">
                     <strong>Key Takeaway:</strong> <span class="text-red-400 font-semibold">Weak passwords are the #1 security vulnerability.</span> Even encrypted files are only as strong as their password.
@@ -287,9 +274,7 @@
                 </a>
             </div>
         </section>
-
     </main>
-
     <script>
         lucide.createIcons();
     </script>
