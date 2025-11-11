@@ -35,29 +35,17 @@
         .concept-card:hover {
             border-color: #22d3ee;
         }
-        .command-box {
-            background-color: #0c121e;
-            padding: 1rem;
+        img.command-image {
+            width: 100%;
+            max-width: 852px;
+            height: auto;
             border-radius: 0.5rem;
-            overflow-x: auto;
-            font-family: monospace;
-            color: #f8fafc;
-            margin-top: 0.75rem;
-            margin-bottom: 1rem;
-            border-left: 4px solid #22d3ee;
+            margin-top: 1rem;
+            border: 2px solid #334155;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
-       img.command-image {
-    width: 100%;
-    max-width: 852px;
-    height: auto;
-    border-radius: 0.5rem;
-    margin-top: 1rem;
-    border: 2px solid #334155;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
     </style>
 </head>
 
@@ -80,6 +68,7 @@
             </p>
         </header>
 
+        <!-- Introduction -->
         <section class="mb-12">
             <h2 class="text-3xl font-bold text-white mb-4">Introduction</h2>
             <div class="concept-card">
@@ -98,116 +87,75 @@
         <!-- Part 1 -->
         <section class="mb-12 pt-4 border-t border-slate-700">
             <h2 class="text-3xl font-bold text-white section-header">Part 1: Movement and Location</h2>
-            <div class="space-y-6">
-                <div class="concept-card">
-                    <h3 class="text-xl font-semibold electric-blue mb-3">Commands Used: pwd, ls, cd</h3>
-                    <p>
-                        We start by exploring how to check our current location in the file system, list directory contents, and move between folders. The <code class="text-white">pwd</code> (Print Working Directory) command displays the absolute path of the current working directory, helping us know where we are in the file structure. The <code class="text-white">ls</code> command lists the files and directories present in the current location. The <code class="text-white">cd</code> (Change Directory) command allows us to navigate from one directory to another.
-                    </p>
-                    <div class="command-box">
-                        user@kali:~$ pwd<br>
-                        /home/knight5oul<br><br>
-                        user@kali:~$ ls<br>
-                        Desktop  Documents  Downloads  Music  Pictures<br><br>
-                        user@kali:~$ cd Desktop
-                    </div>
-                    <p>
-                        In this step, we confirmed that we were in the home directory of user <strong>knight5oul</strong>, viewed the available directories using <code>ls</code>, and then moved to the Desktop directory using <code>cd Desktop</code>.
-                    </p>
-                    <img src="images/l1.png" alt="Linux terminal showing pwd, ls, and cd commands" class="command-image">
-                </div>
+            <div class="concept-card">
+                <h3 class="text-xl font-semibold electric-blue mb-3">Commands Used: pwd, ls, cd</h3>
+                <p>
+                    We start by exploring how to check our current location in the file system, list directory contents, and move between folders. The <code class="text-white">pwd</code> (Print Working Directory) command displays the absolute path of the current working directory, helping us know where we are in the file structure. The <code class="text-white">ls</code> command lists the files and directories present in the current location. The <code class="text-white">cd</code> (Change Directory) command allows us to navigate from one directory to another.
+                </p>
+                <p class="mt-4">
+                    In this step, we confirmed that we were in the home directory of user <strong>knight5oul</strong>, viewed the available directories using <code>ls</code>, and then moved to the Desktop directory using <code>cd Desktop</code>.
+                </p>
+                <img src="images/l1.png" alt="Linux terminal showing pwd, ls, and cd commands" class="command-image">
             </div>
         </section>
 
         <!-- Part 2 -->
         <section class="mb-12 pt-4 border-t border-slate-700">
             <h2 class="text-3xl font-bold text-white section-header">Part 2: Directory Creation and Inspection</h2>
-            <div class="space-y-6">
-                <div class="concept-card">
-                    <h3 class="text-xl font-semibold electric-blue mb-3">Commands Used: ls, cd, mkdir</h3>
-                    <p>
-                        Once inside the Desktop, we used <code class="text-white">ls</code> to check for any directories, then entered the “Linux” directory using <code class="text-white">cd Linux</code>. Here, the <code class="text-white">mkdir</code> (Make Directory) command was used to create a new folder named <strong>Learn_C</strong>. This directory joins the existing ones, Learn_A and Learn_B, helping us organize our workspace.
-                    </p>
-                    <div class="command-box">
-                        user@kali:~/Desktop$ ls<br>
-                        Linux  Projects<br><br>
-                        user@kali:~/Desktop$ cd Linux<br><br>
-                        user@kali:~/Desktop/Linux$ ls<br>
-                        Learn_A  Learn_B<br><br>
-                        user@kali:~/Desktop/Linux$ mkdir Learn_C
-                    </div>
-                    <p>
-                        The <code>mkdir</code> command helps create directories for file organization. Using <code>ls</code> afterwards confirms the new folder’s presence. This reflects standard file management through the terminal.
-                    </p>
-                    <img src="images/l2.png" alt="Linux terminal showing mkdir and directory navigation" class="command-image">
-                </div>
+            <div class="concept-card">
+                <h3 class="text-xl font-semibold electric-blue mb-3">Commands Used: ls, cd, mkdir</h3>
+                <p>
+                    Once inside the Desktop, we used <code class="text-white">ls</code> to check for any directories, then entered the “Linux” directory using <code class="text-white">cd Linux</code>. Here, the <code class="text-white">mkdir</code> (Make Directory) command was used to create a new folder named <strong>Learn_C</strong>. This directory joins the existing ones, Learn_A and Learn_B, helping us organize our workspace.
+                </p>
+                <p class="mt-4">
+                    The <code>mkdir</code> command helps create directories for file organization. Using <code>ls</code> afterwards confirms the new folder’s presence. This reflects standard file management through the terminal.
+                </p>
+                <img src="images/l2.png" alt="Linux terminal showing mkdir and directory navigation" class="command-image">
             </div>
         </section>
 
         <!-- Part 3 -->
         <section class="mb-12 pt-4 border-t border-slate-700">
             <h2 class="text-3xl font-bold text-white section-header">Part 3: File Creation and Viewing</h2>
-            <div class="space-y-6">
-                <div class="concept-card">
-                    <h3 class="text-xl font-semibold electric-blue mb-3">Commands Used: nano, cat</h3>
-                    <p>
-                        Inside the Learn_C directory, we used <code class="text-white">nano</code> to create a text file named <strong>tutorial.txt</strong>. The Nano text editor is a simple and user-friendly command-line tool that allows direct editing of text files. After typing some content and saving it, we used the <code class="text-white">cat</code> command to display the content of the file directly in the terminal.
-                    </p>
-                    <div class="command-box">
-                        user@kali:~/Desktop/Linux/Learn_C$ nano tutorial.txt<br>
-                        (text entered and saved)<br><br>
-                        user@kali:~/Desktop/Linux/Learn_C$ cat tutorial.txt
-                    </div>
-                    <p>
-                        The <code>cat</code> command quickly verifies the content of files and is particularly useful for reviewing configuration or script files without opening them in an editor.
-                    </p>
-                    <img src="images/l3.png" alt="Linux terminal showing nano and cat commands" class="command-image">
-                </div>
+            <div class="concept-card">
+                <h3 class="text-xl font-semibold electric-blue mb-3">Commands Used: nano, cat</h3>
+                <p>
+                    Inside the Learn_C directory, we used <code class="text-white">nano</code> to create a text file named <strong>tutorial.txt</strong>. The Nano text editor is a simple and user-friendly command-line tool that allows direct editing of text files. After typing some content and saving it, we used the <code class="text-white">cat</code> command to display the content of the file directly in the terminal.
+                </p>
+                <p class="mt-4">
+                    The <code>cat</code> command quickly verifies the content of files and is particularly useful for reviewing configuration or script files without opening them in an editor.
+                </p>
+                <img src="images/l3.png" alt="Linux terminal showing nano and cat commands" class="command-image">
             </div>
         </section>
 
         <!-- Part 4 -->
         <section class="mb-12 pt-4 border-t border-slate-700">
             <h2 class="text-3xl font-bold text-white section-header">Part 4: File Deletion and Verification</h2>
-            <div class="space-y-6">
-                <div class="concept-card">
-                    <h3 class="text-xl font-semibold electric-blue mb-3">Command Used: rm</h3>
-                    <p>
-                        The <code class="text-white">rm</code> command (Remove) is used to delete files permanently. Once a file is removed using this command, it does not go to a recycle bin; it is deleted from the file system. After removing the file, we used <code class="text-white">ls</code> again to confirm that the file had been successfully deleted.
-                    </p>
-                    <div class="command-box">
-                        user@kali:~/Desktop/Linux/Learn_C$ rm tutorial.txt<br><br>
-                        user@kali:~/Desktop/Linux/Learn_C$ ls
-                    </div>
-                    <p>
-                        This process ensures that the directory Learn_C is now empty, which allows further cleanup or new file creation in subsequent steps.
-                    </p>
-                    <img src="images/l4.png" alt="Linux terminal showing rm command and ls verification" class="command-image">
-                </div>
+            <div class="concept-card">
+                <h3 class="text-xl font-semibold electric-blue mb-3">Command Used: rm</h3>
+                <p>
+                    The <code class="text-white">rm</code> command (Remove) is used to delete files permanently. Once a file is removed using this command, it does not go to a recycle bin; it is deleted from the file system. After removing the file, we used <code class="text-white">ls</code> again to confirm that the file had been successfully deleted.
+                </p>
+                <p class="mt-4">
+                    This process ensures that the directory Learn_C is now empty, which allows further cleanup or new file creation in subsequent steps.
+                </p>
+                <img src="images/l4.png" alt="Linux terminal showing rm command and ls verification" class="command-image">
             </div>
         </section>
 
         <!-- Part 5 -->
         <section class="mb-12 pt-4 border-t border-slate-700">
             <h2 class="text-3xl font-bold text-white section-header">Part 5: Directory Cleanup</h2>
-            <div class="space-y-6">
-                <div class="concept-card">
-                    <h3 class="text-xl font-semibold electric-blue mb-3">Command Used: rmdir</h3>
-                    <p>
-                        To clean up the workspace, we navigated back to the Linux directory and listed its contents using <code class="text-white">ls</code>. The <code class="text-white">rmdir</code> command (Remove Directory) was then used to delete the two empty directories, <strong>Learn_A</strong> and <strong>Learn_B</strong>. Running <code class="text-white">ls</code> again confirmed that only <strong>Learn_C</strong> remained.
-                    </p>
-                    <div class="command-box">
-                        user@kali:~/Desktop/Linux$ ls<br>
-                        Learn_A  Learn_B  Learn_C<br><br>
-                        user@kali:~/Desktop/Linux$ rmdir Learn_A Learn_B<br><br>
-                        user@kali:~/Desktop/Linux$ ls<br>
-                        Learn_C
-                    </div>
-                    <p>
-                        The <code>rmdir</code> command is only applicable to empty folders. For directories containing files, the <code>rm -r</code> (recursive remove) command would be required.
-                    </p>
-                    <img src="images/l5.png" alt="Linux terminal showing rmdir command and confirmation" class="command-image">
-                </div>
+            <div class="concept-card">
+                <h3 class="text-xl font-semibold electric-blue mb-3">Command Used: rmdir</h3>
+                <p>
+                    To clean up the workspace, we navigated back to the Linux directory and listed its contents using <code class="text-white">ls</code>. The <code class="text-white">rmdir</code> command (Remove Directory) was then used to delete the two empty directories, <strong>Learn_A</strong> and <strong>Learn_B</strong>. Running <code class="text-white">ls</code> again confirmed that only <strong>Learn_C</strong> remained.
+                </p>
+                <p class="mt-4">
+                    The <code>rmdir</code> command is only applicable to empty folders. For directories containing files, the <code>rm -r</code> (recursive remove) command would be required.
+                </p>
+                <img src="images/l5.png" alt="Linux terminal showing rmdir command and confirmation" class="command-image">
             </div>
         </section>
 
@@ -226,5 +174,3 @@
     </script>
 </body>
 </html>
-
-
